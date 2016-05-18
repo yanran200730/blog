@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin:  0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #959595
+        }
+        header{
+            margin: 0 auto;
+            height: 200px;
+        }
+        nav {
+            width: 947px;
+            margin: 0 auto;
+        }
+        .list {
+            list-style: none;
+            margin: 0 auto;
+            float: left;
+            width: 504px;
+        }
+        header nav ul li{
+            display: block;
+            float: left;
+            height: 70px
+            margin-right: 8px;
+        }
+        a  {
+            display: block;
+            font-size: 15px;
+            text-decoration :none;
+            padding: 23px 24px 24px 24px;
+            color: #959595;
+        }
+        a:hover {
+            background-color:#f4f4e5; 
+        }
+        .search {
+            float: right;
+            width: 300px;
+            height: 62px;
+        }
+
+        #editbox{
+            margin-top:13px; 
+            margin-left:20px; 
+            padding: 11px 6px 10px 6px;
+            height: 13px;
+            width: 181px;
+            color: #959595;
+            display: inline-block;
+            float: left;
+            border: 1px solid #DEDEDE;
+            border-right:none; 
+        }
+        #ioc{
+            margin-top: 13px;
+            display: inline-block;
+            float:left;
+        }
+        .about_me{
+            clear: both;
+        }
+        .about_me {          
+            margin: 0 auto;
+            width: 940px;
+            background-color:#f4f4e5;
+            height: 136px;
+        }
+        section{
+            margin: 0 auto;
+            width: 940px;
+            height: 867px;
+            border: 1px solid #DEDEDE;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+
+        <div class="search">
+            <form  name="formseach" method="post">
+                <input name="editbox_search" id="editbox" maxlength="20"  placeholder="Search " type="text"  />      
+                <input name="button_search" src="../static/IMG/search_btn.gif" type="image"/ id="ioc">
+            </form>
+        </div>
+        </div>
+        <div class="about_me">
+            <div>
+                <h1>Personal Space </h1>
+            </div>
+            <div></div>
+        </div>
+    </header>
+    <div>
+        <section>
+            <article class="content"></article>
+        </section>
+        <aside >
+            <div class="sidebar"></div>
+        </aside>
+    </div>
+    <footer></footer>
+</body>
+</html>

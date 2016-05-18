@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/login.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="article">
+		<div id="button">
+			<span id="login_button" class="botton_sytle">登录</span>
+			<span id="register_button">注册</span>
+		</div>
+
+		<article>
+			<div id="login_form">
+				<form class="login" method="post" id="form">
+					<div class="account">
+						<input id= "id_name" type="text" name="username" placeholder="账号" \>
+						<input id= "id_password" type="password" name="password" placeholder="密码" \>
+					</div>
+					<p id="msg"></p>
+					<div class="submit_botton" id = "submit_login">
+						<input id="butt1" type="submit" value="登 录" \>
+					</div>
+				</form>
+			</div>
+			<div id="register_form">
+				<form class="register" method="post" id="register">
+					<div class="account">
+						<input id="register_name" type="text" name="username" placeholder="账号" \>
+						<input id="register_passwd" type="password" name="password" placeholder="密码" \>
+						<input id="register_email" type="Email" name="password" placeholder="邮箱" \>
+					</div>
+					<p id="register_msg"></p>
+					<div class="submit_botton">
+						<input id="butt2" type="submit" value="注 册" \>
+					</div>
+				</form>
+			</div>
+		</article>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../static/javascript/login.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../static/javascript/jq.js"></script>
+</body>
+</html>

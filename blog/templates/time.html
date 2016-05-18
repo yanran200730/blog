@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			showtime()
+		}
+			function checktime(t){
+				if (t<10){
+					return "0"+ t
+				}else{
+					return t
+				}
+			}
+
+			function showtime(){
+				var ele = document.getElementById("time")			
+				var now = new Date()
+					year = now.getFullYear()
+					month = now.getMonth()
+				    date = now.getDate()
+				    day = now.getDay()
+				    hour = now.getHours()
+				    min = now.getMinutes()
+				    second =now.getSeconds()
+				    hour = checktime(hour)
+				    min = checktime(min)
+				    second = checktime(second)
+
+				var	weekday = new Array(7)
+					weekday	[0] = "星期天"
+					weekday	[1] = "星期一"
+					weekday	[2] = "星期二"
+					weekday	[3] = "星期三"
+					weekday	[4] = "星期四"
+					weekday	[5] = "星期五"
+					weekday	[6] = "星期六"
+				ele.innerHTML=(year+"年"+(month+1)+"月"+date+"日"+" "+weekday[day]+" "+hour+":"+min+":"+second)
+				setTimeout(showtime,500)	
+			}		
+	</script>
+</head>
+<body>
+	<span id="time"></span>
+</body>
+</html>
