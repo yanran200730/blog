@@ -116,7 +116,7 @@ def talk(request):
             range_length = reste
             length = current_page*5
         else:
-            length =  (current_page)*5 
+            length =  (current_page)*5
     elif request.POST["data"] =="previous":
         range_length = 5
         length = (current_page-2)*5
@@ -144,7 +144,11 @@ def shuoshuo(request):
 	feels_list = list()
 	for i in range(len(feels)):
 		feels_list.append(feels[i])
-	return render_to_response("shuoshuo.html",{"feels_list":feels_list},context_instance=RequestContext(request))	
+	return render_to_response("shuoshuo.html",{"feels_list":feels_list},context_instance=RequestContext(request))
+
+
+
+#
 
 
 
