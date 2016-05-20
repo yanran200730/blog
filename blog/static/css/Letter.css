@@ -1,0 +1,157 @@
+@charset:utf-8;
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', arial, sans-serif;
+	list-style-type: none;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+header {
+	width: 100%;
+	height: 106px;
+	border-bottom: 1px solid #EFEDED;
+}
+
+.head {
+	margin: 0px auto;
+	width: 1050px;
+}
+
+.logo {
+	padding-top: 10px;
+	float: left;
+}
+
+nav ul {
+	position: relative;
+	height: 48px;
+	float: right;
+	top: 59px;
+}
+
+nav ul li {
+	display: block;
+	height: 45px;
+	float: left;
+	line-height: 48px;
+}
+
+nav ul li a {
+	width: 38px;
+	font-size: 17px;
+	display: inline-block;
+	color: #030303;
+	padding: 0 10px;
+}
+
+nav ul li a:hover {
+	border-bottom: 1px solid #4db2ec;
+	color: #4db2ec;
+}
+
+section {
+	width: 1050px;
+	clear: both;
+	margin: 0px auto;
+}
+
+article {
+	margin-top: 20px; 
+	float: left;
+	width: 720px;
+}
+
+.link span {
+	color: rgb(195,195,195);
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+#shuoshuo:hover,#home_page:hover {
+	color: #585858;
+}
+
+.first_title {
+	display: inline-block;
+	margin: 15px 0 25px 0; 
+	padding: 7px 11px;
+	background: #222222;
+	color: white;
+	font-size: 12px;
+	line-height: 10px;
+}
+
+
+.content_block h3 {
+	color: #040404;
+	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+}
+
+.date {
+	color: #aaa;
+	margin: 10px 0;
+	font-size: 13px;
+	display: block;
+}
+
+.content_text {
+	margin: 10px 0;
+	display: inline-block;
+	color: #525252;
+	font-size: 13px;
+	line-height: 24px;		
+}
+
+.img {
+	width: 702px;
+}
+
+#img {
+	display: block;
+	margin: 0px auto;
+}
+
+aside {
+	float: right;
+	width: 280px;
+	margin-top: 70px;
+}
+
+.block_side {
+	margin-bottom: 40px;
+}
+
+.aside {
+	margin-top:30px;
+	height: 150px;
+	border: 1px solid #D1D1D1;	
+}
+
+.current_page {
+	color: #4db2ec;
+	border-bottom: 1px solid #4db2ec;
+}
+
+.subtitle {
+	height: 25px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 20px;
+}
+
+.subtitle span{
+	letter-spacing:2px;
+	height: 15px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 5px;
+	color: #5E6D81;
+	display: inline-block;
+	border-bottom: 1px solid #4db2ec;
+	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
+	line-height: 15px;
+}

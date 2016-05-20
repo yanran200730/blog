@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>那烛火未明 摇曳满地的冷清</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/homepage.css" >
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+	<header>
+		<div class="head">
+			<div class="logo">
+				<a href="">
+					<img src="../static/img/logo.png">
+				</a>
+			</div>
+			<nav id="navigation ">
+				<ul>
+					<li><a href="javascript:;">主页</a></li>
+					<li><a href="{% url 'shuoshuo' %}">说说</a></li>
+					<li><a href="javascript:;">文字</a></li>
+					<li><a href="javascript:;">歌声</a></li>
+					<li><a href="javascript:;">趣味</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<dir class="img_zone ">
+		<div class="title">
+			<span id="one"> 一言</span>
+			<span id="change">换</span>
+			<span id="saying">「风筝的线你随时可以放开，只是别盼望我会回来。」</span>
+		</div>
+		<dir class="img">
+			<div class="img_link" id="first_img">
+				<img src="../static/img/img1.jpg">
+			</div>
+			<div class="img_link">
+				<img src="../static/img/img2.jpg">
+			</div>
+			<div class="img_link">
+				<img src="../static/img/img3.jpg">
+			</div>
+		</dir>
+	</dir>
+	<section class="content">
+		<article class="main">
+			<div class="block">
+				<div class="subtitle"><span id="subtitle">说说</span></div>
+				<div class="talk">
+					{% for item in feel_list %}
+						<img src="../static/img/person_logo.jpg">
+						<a href="{% url 'Letter' id=item.id %}" class="talk_about">
+							{{ item.feeling }}
+						</a>
+						<a href="javascript:;" class="favorite">
+							<i class="fa fa-thumbs-up fa-1x"></i>
+							赞
+							<span class="count">{{ item.like_times }}</span>
+						</a>
+					{% endfor %}
+				</div>
+				<div class="paging">
+					<a class="opacity" id="previous" href="javascript:;" name="3">&lt;</a>
+					<a id="next" href="javascript:;" name= "1" >&gt;</a>
+				</div>
+			</div>
+		</article>
+		<aside>
+			<div class="side">
+				<div>
+					<div class="subtitle">
+						<span id="subtitle">关注微信</span>
+					</div>
+					<div class="wechat">
+					</div>
+				</div>
+				<div>
+					<div class="subtitle aside">
+						<span id="subtitle">标签</span>
+					</div>
+					<div class="wechat">
+					</div>
+				</div>
+				<div>
+					<div class="subtitle aside">
+						<span id="subtitle">热度排行榜</span>
+					</div>
+					<div class="wechat">
+					</div>
+				</div>
+				<div>
+					<div class="subtitle aside">
+						<span id="subtitle">最近评论</span>
+					</div>
+					<div class="wechat">
+					</div>
+				</div>
+			</div>
+		</aside>
+	</section>
+	<footer></footer>
+	<script type="text/javascript" charset="utf-8" src="../static/javascript/homepage.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+{% load pagination_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>那烛火未明 摇曳满地的冷清</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/shuoshuo.css" >
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/img/logo.png">
+                </a>
+            </div>
+            <nav id="navigation ">
+                <ul>
+                    <li><a href="\">主页</a></li>
+                    <li><a href="javascript:;">说说</a></li>
+                    <li><a href="javascript:;">文字</a></li>
+                    <li><a href="javascript:;">歌声</a></li>
+                    <li><a href="javascript:;">趣味</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article>
+        <section>
+            <div class="link">
+                <a href="/"><span id="home_page">首页</span></a><span id="gt">&gt;</span><span>说说</span>
+            </div>
+            <span class="first_title">零碎的小情绪</span>
+        {% autopaginate feels_list 5 %}
+            {% for item in feels_list %}
+                <div class="block">
+                    <div class="img">
+                    	<a href="{% url 'Letter' id=item.id %}">
+	                        {% load staticfiles %}
+	                        <img src="{% static item.img %}">
+	                    </a>    
+                    </div>
+                    <div class="content_block">
+                        <h3 class="title"><a href="{% url 'Letter' id=item.id %}">Letter.{{ item.id }}</a></h3>
+                        <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y/m/d" }}</span>
+                        <span class="content">{{ item.feeling }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% paginate %}
+        </section>
+    </article>
+</body>
+</html>
