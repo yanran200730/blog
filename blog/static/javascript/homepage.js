@@ -1,5 +1,22 @@
 
 //jQuery 封装函数
+
+// $(function(){
+// 	$(".body").dotdotdot({
+// 		after:"a"
+// 	});
+// })
+
+$(document).ready(function(){
+	$(".body").each(function(){
+		var max_width = 90;
+		if($(this).text().length>max_width){
+			$(this).text($(this).text().substring(0,max_width));
+			$(this).html($(this).html()+"......");
+		}
+	});
+})
+
 (function($){
     $.receive = function(ele){
 		$.ajax({
@@ -101,25 +118,6 @@ $(document).ready(function(){
 	});
 });
 
-// //点赞
-// $(document).ready(function(){
-// 	var count_ele = $(".count");
-// 	var talk_about  = $(".talk_about");
-// 	var favorite = $(".favorite");
-
-
-// 	favorite.click(function(){
-// 			var that = $(this)
-// 			index = favorite.index($(this)[0]);
-// 			count = count_ele.eq(index).html();
-// 			content = talk_about.eq(index).html();
-
-// 			if ($(".favorite").eq(index).attr("style")){			
-// 			}else{
-// 				$.rev_count(count,content,index,that);
-// 			}	
-// 	})
-// });
 
 //说说
 $(document).ready(function(){
@@ -156,12 +154,14 @@ $(document).ready(function(){
 			$.rev(talk_about,counts,"next");
 		};	
 	});
+
 	previous.click(function(){
 		var current_page = parseInt($("#next").attr("name"));	
 		if (current_page >1){
 			if (current_page == 2){
 				previous.addClass("opacity");
 			};
+			favorite.removeAttr("style");	
 			next.removeClass("opacity");
 			$.rev(talk_about,counts,"previous")
 		}

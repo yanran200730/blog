@@ -128,10 +128,10 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__),'static').replace('\\', '/'),
+    os.path.join(BASE_DIR, "media"),
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')  
-MEDIA_URL = '/media/'  
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')  
+# MEDIA_URL = '/media/'  
 
-PAGINATION_DEFAULT_WINDOW  = 2
+PAGINATION_DEFAULT_WINDOW  = 2 #分页设置

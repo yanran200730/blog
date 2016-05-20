@@ -1,54 +1,38 @@
+{% extends "base.html" %}
+{% block extracss %} <link rel="stylesheet" type="text/css" href="../static/css/shuoshuo.css">{% endblock%}
 {% load pagination_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>那烛火未明 摇曳满地的冷清</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/shuoshuo.css" >
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
-</head>
-<body>
-    <header>
-        <div class="head">
-            <div class="logo">
-                <a href="/">
-                    <img src="../static/img/logo.png">
-                </a>
-            </div>
-            <nav id="navigation ">
-                <ul>
-                    <li><a href="javascript:;">主页</a></li>
-                    <li><a href="javascript:;">说说</a></li>
-                    <li><a href="javascript:;">文字</a></li>
-                    <li><a href="javascript:;">歌声</a></li>
-                    <li><a href="javascript:;">趣味</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
+{% block content %}
     <article>
-        <section>
-            <div class="link">
-                <a href="/"><span id="home_page">首页</span></a><span id="gt">&gt;</span><span>说说</span>
-            </div>
-            <span class="first_title">零碎的小情绪</span>
-        {% autopaginate feels_list 5 %}
-            {% for item in feels_list %}
-                <div class="block">
-                    <div class="img">
-                        {% load staticfiles %}
-                        <img src="{% static item.img %}">
-                    </div>
-                    <div class="content_block">
-                        <h3 class="title"><a href="javascript:;">Letter.{{ forloop.counter }}</a></h3>
-                        <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y/m/d" }}</span>
-                        <span class="content">{{ item.feeling }}</span>
-                    </div>
+        <div class="article">
+            <div class="section">
+                <div class="link">
+                    <a href="../">
+                        <span id="home_page">首页</span>
+                    </a>
+                    <span id="gt">&gt;</span>
+                    <span>说说</span>
                 </div>
-            {% endfor %}
-        {% paginate %}
-        </section>
+                <span class="first_title">零碎的小情绪</span>
+                {% autopaginate feels_list 5 %}
+                {% for item in feels_list %}
+                    <div class="block">
+                        <div class="img">
+                            <a href="{% url 'Letter' id=item.id %}">
+                                {% load staticfiles %}
+                                <img src="{% static item.img %}">
+                            </a>    
+                        </div>
+                        <div class="content_block">
+                            <h3 class="title"><a href="{% url 'Letter' id=item.id %}">Letter.{{ item.id }}</a></h3>
+                            <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y/m/d" }}</span>
+                            <span class="content">{{ item.feeling }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% paginate %}
+            </div>
+        </div>
     </article>
-</body>
-</html>
+    <script type="text/javascript" src="../static/javascript/shuoshuo.js"></script>  
+{% endblock %}

@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>那烛火未明 摇曳满地的冷清</title>
+{% extends "base.html" %}
+{% block extracss %}
 	<link rel="stylesheet" type="text/css" href="../static/css/homepage.css" >
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
-</head>
-<body>
-	<header>
-		<div class="head">
-			<div class="logo">
-				<a href="">
-					<img src="../static/img/logo.png">
-				</a>
-			</div>
-			<nav id="navigation ">
-				<ul>
-					<li><a href="javascript">主页</a></li>
-					<li><a href="{% url 'shuoshuo' %}">说说</a></li>
-					<li><a href="javascript:;">文字</a></li>
-					<li><a href="javascript:;">歌声</a></li>
-					<li><a href="javascript:;">趣味</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+{% endblock%}	 
+{% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
+{% block content %}
 	<dir class="img_zone ">
 		<div class="title">
 			<span id="one"> 一言</span>
@@ -44,63 +22,49 @@
 			</div>
 		</dir>
 	</dir>
-	<section class="content">
-		<article class="main">
-			<div class="block">
-				<div class="subtitle"><span id="subtitle">说说</span></div>
-				<div class="talk">
-					{% for item in feel_list %}
-						<img src="../static/img/person_logo.jpg">
-						<a href="javascript:;" class="talk_about">
-							{{ item.feeling }}
-						</a>
-						<a href="javascript:;" class="favorite">
-							<i class="fa fa-thumbs-up fa-1x"></i>
-							赞
-							<span class="count">{{ item.like_times }}</span>
-						</a>
-					{% endfor %}
-				</div>
-				<div class="paging">
-					<a class="opacity" id="previous" href="javascript:;" name="3">&lt;</a>
-					<a id="next" href="javascript:;" name= "1" >&gt;</a>
-				</div>
+	<article class="main">
+		<div class="block">
+			<div class="subtitle">
+				<span>说说</span>
 			</div>
-		</article>
-		<aside>
-			<div class="side">
-				<div>
-					<div class="subtitle">
-						<span id="subtitle">关注微信</span>
-					</div>
-					<div class="wechat">
-					</div>
-				</div>
-				<div>
-					<div class="subtitle aside">
-						<span id="subtitle">标签</span>
-					</div>
-					<div class="wechat">
-					</div>
-				</div>
-				<div>
-					<div class="subtitle aside">
-						<span id="subtitle">热度排行榜</span>
-					</div>
-					<div class="wechat">
-					</div>
-				</div>
-				<div>
-					<div class="subtitle aside">
-						<span id="subtitle">最近评论</span>
-					</div>
-					<div class="wechat">
-					</div>
-				</div>
+			<div class="talk">
+				{% for item in feel_list %}
+					<img src="../static/img/person_logo.jpg">
+					<a href="{% url 'Letter' id=item.id %}" class="talk_about">
+						{{ item.feeling }}
+					</a>
+					<a href="javascript:;" class="favorite">
+						<i class="fa fa-thumbs-up fa-1x"></i>
+						赞
+						<span class="count">{{ item.like_times }}</span>
+					</a>
+				{% endfor %}
 			</div>
-		</aside>
-	</section>
-	<footer></footer>
-	<script type="text/javascript" charset="utf-8" src="../static/javascript/homepage.js"></script>
-</body>
-</html>
+			<div class="paging">
+				<a class="opacity" id="previous" href="javascript:;" name="3">&lt;</a>
+				<a id="next" href="javascript:;" name= "1" >&gt;</a>
+			</div>
+		</div>
+		<div class="block character">
+			<div class="subtitle">
+				<span>文字</span>
+			</div>
+			{% for item in article_list %}
+				<div class="content_block">
+					<div class="char_img">
+						{% load staticfiles %}
+						<img src="{% static item.img %}">
+					</div>
+					<dir class="character_content">
+						<h3><a href="javascript:;">{{ item.title }}</a></h3>
+						<span class="auther_date">{{ item.author.username }} - {{ item.createTime|date:"Y/m/d" }}</span>
+						<div class="body"><{{ item.article }}</div>
+						<dir class="char_lable">{{ item.tag }}</dir>
+					</dir>
+				</div>
+			{% endfor %}						
+		</div>
+	</article>
+	<script type="text/javascript" src="../static/javascript/homepage.js"></script>
+	<script src="//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"></script>
+{% endblock %}

@@ -1,7 +1,9 @@
 from django.shortcuts import render,HttpResponse,render_to_response
 #from django.template.context_processors import csrf
 from django.template import RequestContext
-from .models import User,Say,Feeling
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
+from .models import User,Say,Feeling,Article
 import json
 import random
 import math
@@ -64,7 +66,6 @@ def login(request):
  #用户注册post请求
 
 def register(request):
-    print(111)
     data = dict()
     users = User.objects.all()
     if  request.method == "POST":
@@ -91,13 +92,15 @@ def say(request):
 
 #主页html
 def home(request):
-    feels = Feeling.objects.order_by("-id")
-    feel_length = len(Feeling.objects.all())
-    feel_list = []
-    page_len =  str(math.ceil(feel_length/5))
+    feels = Feeling.objects.order_by("-id")#说说
+    articles = Article.objects.order_by("-createTime")#文字
+    feel_list = list()
+    article_list = list()
     for i in range(5):
         feel_list.append(feels[i])
-    return render_to_response("home.html",{"feel_list":feel_list})
+    for j in range(3):
+        article_list.append(articles[j])
+    return render_to_response("home.html",{"feel_list":feel_list,"article_list":article_list})
 
 #说说ajax post请求
 def talk(request):
@@ -131,25 +134,27 @@ def talk(request):
 
 #点赞 ajax post请求，之后优化 可以做异常处理
 def like_count(request):
-	rev_times = request.POST["count"]
-	rev_content = request.POST["content"].strip()
-	database_data = Feeling.objects.get(feeling=rev_content)
-	send_data = str(int(rev_times)+1)
-	database_data.like_times = send_data
-	database_data.save()
-	return HttpResponse(send_data)
+    rev_times = request.POST["count"]
+    rev_content = request.POST["content"].strip()
+    database_data = Feeling.objects.get(feeling=rev_content)
+    send_data = str(int(rev_times)+1)
+    database_data.like_times = send_data
+    database_data.save()
+    return HttpResponse(send_data)
 
 def shuoshuo(request):
-	feels = Feeling.objects.order_by("-createTime")
-	feels_list = list()
-	for i in range(len(feels)):
-		feels_list.append(feels[i])
-	return render_to_response("shuoshuo.html",{"feels_list":feels_list},context_instance=RequestContext(request))
+    feels = Feeling.objects.order_by("-createTime")
+    feels_list = list()
+    for i in range(len(feels)):
+        feels_list.append(feels[i])
+    return render_to_response("shuoshuo.html",{"feels_list":feels_list},context_instance=RequestContext(request))
 
-
-
-#
-
+def mood(request,id):
+    try:
+        feel = Feeling.objects.get(id=str(id))
+    except (Feeling, DoesNotExist):
+    	raise Http404
+    return render_to_response("Letter.html",{"feel":feel})
 
 
 

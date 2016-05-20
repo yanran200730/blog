@@ -30,3 +30,18 @@ class Feeling(models.Model):
 	def __str__(self):
 		return self.person.username
 
+#文字
+class Article(models.Model):
+	author = models.ForeignKey(User)
+	img = models.ImageField(upload_to="img")
+	createTime = models.DateTimeField(auto_now=True)
+	article = models.TextField('文章')
+	tag = models.CharField("标签",max_length=10)
+	title = models.CharField("标题",max_length=20)
+	view_count = models.IntegerField("浏览次数",default=0)
+	praise_count = models.IntegerField("点赞次数",default=0) 
+
+	def __str__(self):
+		return self.author.username
+
+

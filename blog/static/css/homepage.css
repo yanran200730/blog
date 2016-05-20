@@ -1,59 +1,7 @@
 @charset:utf-8;
 
-* {
-	padding: 0;
-	margin: 0;
-	font-family: 'Open Sans', arial, sans-serif;
-	list-style-type: none;
-	text-decoration: none;
-	font-size: 15px;
-}
-
-header {
-	width: 100%;
-	height: 106px;
-	border-bottom: 1px solid #EFEDED;
-}
-
-.head {
-	margin: 0px auto;
-	width: 1050px;
-}
-
-.logo {
-	padding-top: 10px;
-	float: left;
-}
-
-nav ul {
-	position: relative;
-	height: 48px;
-	float: right;
-	top: 59px;
-}
-
-nav ul li {
-	display: block;
-	height: 45px;
-	float: left;
-	line-height: 48px;
-}
-
-nav ul li a {
-	width: 38px;
-	font-size: 17px;
-	display: inline-block;
-	color: #030303;
-	padding: 0 10px;
-}
-
-nav ul li a:hover {
-	border-bottom: 1px solid #4db2ec;
-	color: #4db2ec;
-}
-
 .img_zone {
-	margin: 20px auto;
+	margin: 20px auto 0px;
 }
 
 .title {
@@ -93,7 +41,7 @@ nav ul li a:hover {
 .img {
 	width: 1050px;
 	height: 220px;
-	margin: 10px auto;
+	margin: 10px auto 0;
 	position: relative;
 }
 
@@ -131,30 +79,16 @@ article {
 	float: left;
 	width: 720px;
 	height: 700px;
-/*	border: 1px solid #BEBCBC;*/
 }
 
 .block {
-	margin: 10px auto 40px;
+	margin: 40px auto 40px;
 }
 
 .subtitle {
 	height: 25px;
 	border-bottom: 1px solid #EEEEEE;
 	margin-bottom: 20px;
-}
-
-#subtitle {
-	letter-spacing:2px;
-	height: 15px;
-	font-size: 14px;
-	font-weight: 400;
-	padding: 5px;
-	color: #5E6D81;
-	display: inline-block;
-	border-bottom: 1px solid #4db2ec;
-	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
-	line-height: 15px;
 }
 
 .talk {
@@ -227,12 +161,6 @@ article {
 	border: 1px solid #D6D6D6;
 }
 
-aside {
-	float: right;
-	width: 280px;
-	margin-top: 10px;
-}
-
 .wechat {
 	height: 150px;
 	border: 1px solid #D1D1D1;
@@ -240,4 +168,67 @@ aside {
 
 .aside {
 	margin-top:30px;
+}
+
+.content_block {
+	width: 696px;
+	height: 150px;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.char_img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.char_img img {
+	width: 218px;
+	height: 150px;
+}
+
+.character_content {
+	margin-left: 244px;
+	height: 150px;
+	width: 452px;
+}	
+
+.character_content h3 a {
+	font-size: 18px;
+	font-weight: 600;
+	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
+	color: #111;
+}
+
+.character_content h3 a:hover {
+	color: #4db2ec;
+}
+
+.auther_date {
+	color: #ccc;
+	margin: 10px 0;
+	font-size: 12px;
+	display: block;	
+}
+.body {
+	color: #6E6D6D;
+	font-size: 13px;
+	line-height: 17px;
+}
+
+.char_lable{
+	position: absolute;
+	top: 121px;
+	display: inline-block;
+	padding: 7px 11px;
+	background: #969696;
+	color: white;
+	font-size: 12px;
+	line-height: 10px;
+	border-radius: 4px;
+}
+
+.char_lable:hover {
+	background-color: #484848;
 }

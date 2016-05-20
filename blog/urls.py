@@ -10,4 +10,5 @@ urlpatterns = [
     url('^talk/$',views.talk,name="talk"),
     url('^like_count/$',views.like_count,name="like_count"),
     url('^shuoshuo/$',views.shuoshuo,name="shuoshuo"),
+    url(r'^shuoshuo/Letter-(?P<id>[0-9]{1,})/$',views.mood,name ="Letter")
 ]
