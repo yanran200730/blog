@@ -35,35 +35,34 @@ article {
 	border-radius: 4px;		
 }
 
-
-.content_block h1 {
+.head_content h1 {
 	color: #040404;
-	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 30px;	
 }
 
-.date {
+.head_content span {
 	color: #aaa;
 	margin: 10px 0;
 	font-size: 13px;
 	display: block;
 }
 
-.content_text {
+.content_img {
+	margin: 20px 0;
+}
+
+.content_img img {
+	display: block;
+	margin: 0 auto;
+}
+
+
+.content_section p {
 	margin: 10px 0;
 	display: inline-block;
 	color: #525252;
 	font-size: 13px;
-	line-height: 24px;		
+	line-height: 40px;
+	text-indent:2em; 	
 }
-
-.img {
-	width: 702px;
-}
-
-#img {
-	display: block;
-	margin: 0px auto;
-}
-

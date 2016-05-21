@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^like_count/$',views.like_count,name="like_count"),
     url(r'^shuoshuo/$',views.shuoshuo,name="shuoshuo"),
     url(r'^shuoshuo/Letter-(?P<id>[0-9]{1,})/$',views.mood,name ="Letter"),
-    url(r'^article/$',views.article,name="article")
+    url(r'^article/$',views.article,name="article"),
+    url(r'^article/blog-(?P<id>[0-9]{1,})/$',views.blog,name ="blog")
 ]

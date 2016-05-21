@@ -94,13 +94,14 @@ def say(request):
 def home(request):
     feels = Feeling.objects.order_by("-id")#说说
     articles = Article.objects.order_by("-createTime")#文字
+    length = math.ceil(len(feels)/5)
     feel_list = list()
     article_list = list()
     for i in range(5):
         feel_list.append(feels[i])               #心情
     for j in range(3):
         article_list.append(articles[j])         #文字
-    return render_to_response("home.html",{"feel_list":feel_list,"article_list":article_list})
+    return render_to_response("home.html",{"feel_list":feel_list,"article_list":article_list,"length":length})
 
 #说说ajax post请求
 def talk(request):
@@ -152,7 +153,7 @@ def shuoshuo(request):
 def mood(request,id):
     try:
         feel = Feeling.objects.get(id=str(id))
-    except (Feeling, DoesNotExist):
+    except (Feeling.DoesNotExist):
     	raise Http404
     return render_to_response("Letter.html",{"feel":feel})
 
@@ -161,9 +162,16 @@ def article(request):
     article_list = list()
     for i in range(len(articles)):
         article_list.append(articles[i])
-    return render_to_response("article.html",{"article_list":article_list})
+    return render_to_response("article.html",{"article_list":article_list},context_instance=RequestContext(request))
 
+#单篇文章
 
+def blog(request,id):
+    try:
+        article = Article.objects.get(id=str(id))
+    except (Article.DoesNotExist):
+        raise Http404#待定义
+    return render_to_response("blog.html",{"article":article})        
 
 
 

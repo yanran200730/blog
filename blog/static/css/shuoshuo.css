@@ -7,13 +7,13 @@ article {
 }
 
 .block_side {
-	margin-top: 40px;
+	margin-top: 70px;
 }
 
 .link span {
 	color: rgb(195,195,195);
 	font-size: 14px;
-	margin-right: 10px;
+	margin-right: 8px;
 }
 
 #home_page:hover {
@@ -24,14 +24,31 @@ article {
 	font-size: 10px;
 }
 
-.title_block {
-	margin: 10px 0 20px 0;
+.head_section {
+	margin-bottom: 25px; 
 }
 
-.title_block,h1{
+.title_block {
+	margin: 10px 0 0 5px;
+}
+
+.title_block h1 {
 	font-size: 30px;
 	font-weight: 400;
 	color: #030303;
+	margin-bottom: 15px;
+}
+
+.title_block p {
+	font-style: italic;
+	color: #777;
+	line-height: 26px;
+	font-size: 16px;
+}
+
+.content_section {
+	position: absolute;
+	margin-top: 25px;
 }
 
 .block {

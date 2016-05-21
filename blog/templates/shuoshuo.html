@@ -4,19 +4,21 @@
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
     <article>
-        <div class="article">
-            <div class="section">
-                <div class="link">
-                    <a href="../">
-                        <span id="home_page">首页</span>
-                    </a>
-                    <span id="gt">&gt;</span>
-                    <span>说说</span>
-                </div>
-                <div class="title_block">
-                    <h1 class="first_title">零碎的小情绪</h1>
-                </div>
-                {% autopaginate feels_list 5 %}
+        <div class="head_section">
+            <div class="link">
+                <a href="../">
+                    <span id="home_page">首页</span>
+                </a>
+                <span id="gt">&gt;</span>
+                <span>说说</span>
+             </div>
+            <div class="title_block">
+                <h1>说说</h1>
+                <p>小清新文字、治愈系文字、唯美的文字、散文随笔，我们都是文字控</p>
+            </div>
+        </div>    
+        <div class="content_section"> 
+            {% autopaginate feels_list 5 %}
                 {% for item in feels_list %}
                     <div class="block">
                         <div class="img">
@@ -33,8 +35,7 @@
                     </div>
                 {% endfor %}
             {% paginate %}
-            </div>
-        </div>
+        </div>    
     </article>
     <script type="text/javascript" src="../static/javascript/shuoshuo.js"></script>  
 {% endblock %}

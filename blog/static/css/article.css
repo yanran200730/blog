@@ -1,15 +1,18 @@
 @charset: utf-8;
 
 .block_side {
-	margin-top: 40px;
+	margin-top: 70px;
 }
 
 article {
+	width: 720px; 
 	margin-top: 20px;
 	float: left;
-	width: 720px;
 }
 
+.head_section {
+	margin-bottom: 25px;
+}
 
 .link span {
 	color: rgb(195,195,195);
@@ -26,7 +29,7 @@ article {
 }
 
 .title_block {
-	margin: 10px 0 40px 0;
+	margin: 10px 0 0 5px;
 }
 
 .title_block h1 {
@@ -43,32 +46,88 @@ article {
 	font-size: 16px;
 }
 
-.section_content {
-	width: 324px;
-	height: 228px;
-	margin: 0 12px 20px 0;
+.content_section {
+	margin-top: 45px;
 }
 
-.img {
+.section_content {
+	display: inline-block;
+	width: 324px;
+	height: 228px;
+	margin: 0px 34px 15px 0;
+}
+
+.article_img img {
 	width: 324px;
 	height: 160px;
+	cursor: pointer;
 }
 
 .title {
-	margin: 10px 0;
+	display: inline-block;
+	margin-top: 10px;
 	font-size: 14px;
 	color: #111;
 	font-weight: 200;
 	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
 }
 
 .article_content {
+	margin: 0;
+	display: inline-block;
 	color: #aaa;
 	margin: 10px 0;
 	font-size: 12px;
 	display: block;
 }
 
+
+/*分页样式*/
+.pagination {
+	margin-bottom: 400px;
+	font-family: 'Open Sans', arial, sans-serif;
+	min-width: 33px
+}
+
+.prev,.next{
+	border: 1px solid #e3e3e3;
+	margin: 0 8px 8px 0;
+	padding: 9px 12px 7px ;
+	text-align: center;
+	color: #666;
+	height: 21px;
+	line-height: 21px;
+	font-size: 12px;
+}
+
+.page {
+	border: 1px solid #e3e3e3;
+	padding: 10px 12px 7px;
+	border: 1px solid #e3e3e3;
+	margin: 0 8px 8px 0;
+	text-align: center;
+	font-size: 12px;
+}
+
+.pagination a:link,:visited {
+	color: #434242;
+}
+
+.pagination a:hover {
+    color: #fff;
+    background-color: #444;
+    border-color: #444;
+}
+
+.current {
+	background-color: #4db2ec;
+	color: #fff;
+}
+
+.disabled {
+	display: none;
+}
 
 
 

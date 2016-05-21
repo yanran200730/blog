@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="/static/css/blog.css" >
+{% endblock%}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+	<article>
+        <div class="head_section">
+            <div class="navigation">
+                <a href="/">
+                    <span id="home_page">首页</span>
+                </a>
+                    <span id="gt">&gt;</span>
+                <a href="../">
+                    <span id="shuoshuo">文字</span>
+                </a>
+            </div>    
+            <span class="tag">{{ article.tag }}</span>
+        </div>
+        <dir class="content_section">
+        	<div class="head_content">
+        		<h1>{{ article.title }}</h1>
+        		<span>作者：{{ article.author.username }}&nbsp; -  &nbsp;{{ article.createTime|date:" Y / m / d " }}</span>
+        	</div>
+        	<div class="content_img">
+        		{% load staticfiles %}
+        		<img src="{% static article.img %}">
+        	</div>
+        	<p class="article">{{ article.article }}</p>
+        </dir>
+	</article>
+	<script type="text/javascript" src="/static/javascript/blog.js"></script>
+{% endblock %}
