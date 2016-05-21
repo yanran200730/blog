@@ -2,13 +2,13 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    # url(r'^test/(\d*)', views.text),
-    url('^login/$',views.login,name="login"),
-    url('^register/$',views.register,name="register"),
-    url('^$',views.home,name="home"),
-    url('^say/$',views.say,name="sya"),
-    url('^talk/$',views.talk,name="talk"),
-    url('^like_count/$',views.like_count,name="like_count"),
-    url('^shuoshuo/$',views.shuoshuo,name="shuoshuo"),
-    url(r'^shuoshuo/Letter-(?P<id>[0-9]{1,})/$',views.mood,name ="Letter")
+    url(r'^login/$',views.login,name="login"),
+    url(r'^register/$',views.register,name="register"),
+    url(r'^$',views.home,name="home"),
+    url(r'^say/$',views.say,name="sya"),
+    url(r'^talk/$',views.talk,name="talk"),
+    url(r'^like_count/$',views.like_count,name="like_count"),
+    url(r'^shuoshuo/$',views.shuoshuo,name="shuoshuo"),
+    url(r'^shuoshuo/Letter-(?P<id>[0-9]{1,})/$',views.mood,name ="Letter"),
+    url(r'^article/$',views.article,name="article")
 ]

@@ -7,15 +7,7 @@
 // 	});
 // })
 
-$(document).ready(function(){
-	$(".body").each(function(){
-		var max_width = 90;
-		if($(this).text().length>max_width){
-			$(this).text($(this).text().substring(0,max_width));
-			$(this).html($(this).html()+"......");
-		}
-	});
-})
+
 
 (function($){
     $.receive = function(ele){
@@ -136,37 +128,46 @@ $(document).ready(function(){
 		count = counts.eq(index).html();
 		content = talk_about.eq(index).html();
 
-		if ($(".favorite").eq(index).attr("style")){			
+		if ($(".favorite").eq(index).attr("style")){
 		}else{
 			$.rev_count(count,content,index,that);
-		}	
-	})	
-			
+		}
+	})
+
 	next.click(function(){
 	    var length = $("#previous").attr("name")
-		var current_page = parseInt($("#next").attr("name"));	
+		var current_page = parseInt($("#next").attr("name"));
 		if (current_page < length){
 			if (current_page == length-1){
 				next.addClass("opacity")
 			};
-			favorite.removeAttr("style");	
+			favorite.removeAttr("style");
 			previous.removeClass("opacity");
 			$.rev(talk_about,counts,"next");
-		};	
+		};
 	});
 
 	previous.click(function(){
-		var current_page = parseInt($("#next").attr("name"));	
+		var current_page = parseInt($("#next").attr("name"));
 		if (current_page >1){
 			if (current_page == 2){
 				previous.addClass("opacity");
 			};
-			favorite.removeAttr("style");	
+			favorite.removeAttr("style");
 			next.removeClass("opacity");
 			$.rev(talk_about,counts,"previous")
 		}
 	});
 });
 
+$(document).ready(function(){
+	$(".body").each(function(){
+		var max_width = 90;
+		if($(this).text().length>max_width){
+			$(this).text($(this).text().substring(0,max_width));
+			$(this).html($(this).html()+"......");
+		}
+	});
+});
 
 

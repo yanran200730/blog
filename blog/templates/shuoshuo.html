@@ -13,7 +13,9 @@
                     <span id="gt">&gt;</span>
                     <span>说说</span>
                 </div>
-                <span class="first_title">零碎的小情绪</span>
+                <div class="title_block">
+                    <h1 class="first_title">零碎的小情绪</h1>
+                </div>
                 {% autopaginate feels_list 5 %}
                 {% for item in feels_list %}
                     <div class="block">
@@ -21,12 +23,12 @@
                             <a href="{% url 'Letter' id=item.id %}">
                                 {% load staticfiles %}
                                 <img src="{% static item.img %}">
-                            </a>    
+                            </a>
                         </div>
                         <div class="content_block">
                             <h3 class="title"><a href="{% url 'Letter' id=item.id %}">Letter.{{ item.id }}</a></h3>
                             <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y/m/d" }}</span>
-                            <span class="content">{{ item.feeling }}</span>
+                            <span class="shuoshuo_content">{{ item.feeling }}</span>
                         </div>
                     </div>
                 {% endfor %}

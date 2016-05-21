@@ -1,13 +1,13 @@
 @charset:utf-8;
 
 article {
-	margin-top: 20px; 
+	margin-top: 20px;
 	float: left;
 	width: 720px;
 }
 
 .block_side {
-	margin-top: 40px; 	
+	margin-top: 40px;
 }
 
 .link span {
@@ -24,13 +24,14 @@ article {
 	font-size: 10px;
 }
 
-.first_title {
+.title_block {
+	margin: 10px 0 20px 0;
+}
+
+.title_block,h1{
 	font-size: 30px;
 	font-weight: 400;
 	color: #030303;
-	display: block;
-	margin-top: 20px;
-	margin-bottom: 20px;
 }
 
 .block {
@@ -79,7 +80,7 @@ article {
 	display: block;
 }
 
-.content {
+.shuoshuo_content {
 	color: #6E6D6D;
 	font-size: 13px;
 	line-height: 17px;

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="../static/css/article.css" >
+{% endblock%}
+{% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
+{% block content %}
+    <article>
+        <div class="article">
+            <div class="section">
+                <div class="link">
+                    <a href="../">
+                        <span id="home_page">首页</span>
+                    </a>
+                    <span id="gt">&gt;</span>
+                    <span>说说</span>
+                </div>
+                <div class="title_block">
+                	<h1>文字</h1>
+                	<p>小清新文字、治愈系文字、唯美的文字、散文随笔，我们都是文字控</p>
+                </div>
+        	</div>
+        	{% for item in article_list %}
+	        {# 	<div class="section_content"> #}
+	        		{# <div class="img"> #}
+	        			{% load staticfiles %}
+	        			<img class="img" src="{% static item.img %}">
+	        	{# 	</div> #}
+	        		{# <div class="section_char"> #}
+	        			<h3 class="title">{{ item.title }}</h3>
+	        			<span class="article_content">{{ item.author.username }} - {{ item.createTime }}</span>
+	        {# 		</div> #}
+	      {#   	</div> #}
+	        {% endfor %}
+        </div>
+	</article>
+	<script type="text/javascript" src="../static/javascript/article.js"></script>
+{% endblock %}

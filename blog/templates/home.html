@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block extracss %}
 	<link rel="stylesheet" type="text/css" href="../static/css/homepage.css" >
-{% endblock%}	 
+{% endblock%}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
 	<dir class="img_zone ">
@@ -58,11 +58,11 @@
 					<dir class="character_content">
 						<h3><a href="javascript:;">{{ item.title }}</a></h3>
 						<span class="auther_date">{{ item.author.username }} - {{ item.createTime|date:"Y/m/d" }}</span>
-						<div class="body"><{{ item.article }}</div>
+						<div class="body">{{ item.article }}</div>
 						<dir class="char_lable">{{ item.tag }}</dir>
 					</dir>
 				</div>
-			{% endfor %}						
+			{% endfor %}
 		</div>
 	</article>
 	<script type="text/javascript" src="../static/javascript/homepage.js"></script>
