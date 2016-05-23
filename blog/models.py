@@ -52,9 +52,9 @@ class Coding(models.Model):
 	tag = models.CharField("标签",max_length=20)
 	title = models.CharField("标题",max_length=50)
 	view_count = models.IntegerField("浏览次数",default=0)
-	praise_count = models.IntegerField("点赞次数",default=0) 
+	praise_count = models.IntegerField("点赞次数",default=0)
 
 	def __str__(self):
-		return self.author.username	
+		return self.author.username
 
 

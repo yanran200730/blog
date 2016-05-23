@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load custom_markdown %}
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/coding.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'highlight/styles/Solarized-Light.css' %}">
+{% endblock%}
+{% block title %}{{ code_article.title }}{% endblock %}
+{% block content %}
+	<article>
+        <div class="head_section">
+            <div class="navigation">
+                <a href="/">
+                    <span id="home_page">首页</span>
+                </a>
+                    <span id="gt">&gt;</span>
+                <a href="../">
+                    <span id="shuoshuo">编程</span>
+                </a>
+            </div>
+            <span class="tag">{{ code_article.tag }}</span>
+        </div>
+        <dir class="content_section">
+        	<div class="head_content">
+        		<h1>{{ code_article.title }}</h1>
+        		<span>作者：{{ code_article.author.username }}&nbsp; -  &nbsp;{{ code_article.createTime|date:" Y / m / d " }}</span>
+        	</div>
+            <div class="body_content">
+        	   <p class="article">{{ code_article.article|custom_markdown }}</p>
+            </div>
+        </dir>
+	</article>
+	<script type="text/javascript" src="{% static 'javascript/coding.js' %}"></script>
+    <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script> 
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}

@@ -17,8 +17,8 @@
                 <h1>说说</h1>
                 <p>小清新文字、治愈系文字、唯美的文字、散文随笔，我们都是文字控</p>
             </div>
-        </div>    
-        <div class="content_section"> 
+        </div>
+        <div class="content_section">
             {% autopaginate feels_list 5 %}
                 {% for item in feels_list %}
                     <div class="block">
@@ -35,7 +35,7 @@
                     </div>
                 {% endfor %}
             {% paginate %}
-        </div>    
+        </div>
     </article>
     <script type="text/javascript" src="{% static 'javascript/shuoshuo.js' %}"></script>  
 {% endblock %}

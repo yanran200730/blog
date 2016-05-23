@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^article/$',views.article,name="article"),
     url(r'^article/blog-(?P<id>[0-9]{1,})/$',views.blog,name ="blog"),
     url(r'^music/$',views.music,name="music"),
-    url(r'^learn/$',views.learn,name="learn")
+    url(r'^learn/$',views.learn,name="learn"),
+    url(r'^coding/article_coding-(?P<id>[0-9]{1,})/$',views.coding,name ="coding")
 ]

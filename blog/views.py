@@ -171,16 +171,24 @@ def blog(request,id):
         article = Article.objects.get(id=str(id))
     except (Article.DoesNotExist):
         raise Http404#待定义
-    return render_to_response("blog.html",{"article":article})        
+    return render_to_response("blog.html",{"article":article})
 
 def music(request):
     return render_to_response("music.html")
 
 def learn(request):
-    condings = Coding.objects.all()
-    conding  = condings[0] 
-    return render_to_response("learn.html",{"conding":conding})
+    condings = Coding.objects.order_by("-createTime")
+    code_article  = list()
+    for i in range(len(condings)):
+        code_article.append(condings[i])
+    return render_to_response("learn.html",{"code_article":code_article})
 
+def coding(request,id):
+    try:
+        code_article =  Coding.objects.get(id=str(id))
+    except (Coding.DoesNotExist):
+        raise Http404
+    return render_to_response("coding.html",{"code_article":code_article})
 
 
 
