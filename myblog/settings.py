@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'blog',
     'pagination',
+    # 'duoshuo',
+    'pagedown',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -135,3 +137,6 @@ STATICFILES_DIRS = (
 # MEDIA_URL = '/media/'  
 
 PAGINATION_DEFAULT_WINDOW  = 2 #分页设置
+
+# DUOSHUO_ECRET = 'xxxxx'
+# DUOSHUO_SHORT_NAME = 'xxxxx'

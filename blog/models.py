@@ -44,4 +44,17 @@ class Article(models.Model):
 	def __str__(self):
 		return self.author.username
 
+class Coding(models.Model):
+	author = models.ForeignKey(User)
+	article = models.TextField('文章')
+	img = models.ImageField(upload_to="img",null=True,blank=True)
+	createTime = models.DateTimeField(auto_now=True)
+	tag = models.CharField("标签",max_length=20)
+	title = models.CharField("标题",max_length=50)
+	view_count = models.IntegerField("浏览次数",default=0)
+	praise_count = models.IntegerField("点赞次数",default=0) 
+
+	def __str__(self):
+		return self.author.username	
+
 

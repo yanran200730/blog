@@ -1,0 +1,47 @@
+@charset:utf-8;
+
+article {
+	margin-top: 20px;
+	float: left;
+	width: 720px;
+}
+
+.block_side {
+	margin-top: 70px;
+}
+
+.link span {
+	color: rgb(195,195,195);
+	font-size: 14px;
+	margin-right: 8px;
+}
+
+#home_page:hover {
+	color: #707070;
+}
+
+#gt {
+	font-size: 10px;
+}
+
+.head_section {
+	margin-bottom: 25px; 
+}
+
+.title_block {
+	margin: 10px 0 0 5px;
+}
+
+.title_block h1 {
+	font-size: 30px;
+	font-weight: 400;
+	color: #030303;
+	margin-bottom: 15px;
+}
+
+.title_block p {
+	font-style: italic;
+	color: #777;
+	line-height: 26px;
+	font-size: 16px;
+}

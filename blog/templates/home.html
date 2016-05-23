@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block extracss %}
-	<link rel="stylesheet" type="text/css" href="/static/css/homepage.css" >
+	<link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}" >
 {% endblock%}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
@@ -52,8 +53,6 @@
 			{% for item in article_list %}
 				<div class="content_block">
 					<div class="char_img">
-						<a title="{{ item.title }}" href="{% url 'blog' id=item.id %}">
-							{% load staticfiles %}
 							<img src="{% static item.img %}">
 						</a>	
 					</div>
@@ -67,6 +66,6 @@
 			{% endfor %}
 		</div>
 	</article>
-	<script type="text/javascript" src="/static/javascript/homepage.js"></script>
+	<script type="text/javascript" src="{% static 'javascript/homepage.js' %}"></script>
 	<script src="//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"></script>
 {% endblock %}

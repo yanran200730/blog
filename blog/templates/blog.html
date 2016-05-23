@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block extracss %}
-	<link rel="stylesheet" type="text/css" href="/static/css/blog.css" >
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}" >
 {% endblock%}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
@@ -23,11 +24,10 @@
         		<span>作者：{{ article.author.username }}&nbsp; -  &nbsp;{{ article.createTime|date:" Y / m / d " }}</span>
         	</div>
         	<div class="content_img">
-        		{% load staticfiles %}
         		<img src="{% static article.img %}">
         	</div>
         	<p class="article">{{ article.article }}</p>
         </dir>
 	</article>
-	<script type="text/javascript" src="/static/javascript/blog.js"></script>
+	<script type="text/javascript" src="{% static 'javascript/blog.js' %}"></script>
 {% endblock %}

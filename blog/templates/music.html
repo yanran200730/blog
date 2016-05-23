@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/music.css' %}" >
+{% endblock%}
+{% block title %}小清新音乐{% endblock %}
+{% block content %}
+    <article>
+        <div class="head_section">
+            <div class="link">
+                <a href="../">
+                    <span id="home_page">首页</span>
+                </a>
+                <span id="gt">&gt;</span>
+                <span>声音</span>
+             </div>
+            <div class="title_block">
+                <h1>声音</h1>
+                <p>小清新音乐、治愈系音乐、唯美音乐、有声读物、声音电台、温暖动听的声音</p>
+            </div>
+        </div>    
+    </article>
+    <script type="text/javascript" src="{% static 'javascript/music.js' %}"></script>  
+{% endblock %}

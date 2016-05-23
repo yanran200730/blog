@@ -3,7 +3,7 @@ from django.shortcuts import render,HttpResponse,render_to_response
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from .models import User,Say,Feeling,Article
+from .models import User,Say,Feeling,Article,Coding
 import json
 import random
 import math
@@ -173,6 +173,13 @@ def blog(request,id):
         raise Http404#待定义
     return render_to_response("blog.html",{"article":article})        
 
+def music(request):
+    return render_to_response("music.html")
+
+def learn(request):
+    condings = Coding.objects.all()
+    conding  = condings[0] 
+    return render_to_response("learn.html",{"conding":conding})
 
 
 

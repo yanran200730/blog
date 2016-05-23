@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block extracss %}
-    <link rel="stylesheet" type="text/css" href="/static/css/Letter.css" >
+    <link rel="stylesheet" type="text/css" href="{%static 'css/Letter.css' %}" >
 {% endblock%}
 {% block title %}Letter.{{ feel.id }}{% endblock %}
 {% block content %}
@@ -26,10 +27,9 @@
                 </div>
             </div>
             <div class="img"> 
-                {% load staticfiles %}
                 <img id="img" src="{% static feel.img %}">
             </div>
         </div>    
     </article>
-<script type="text/javascript" src="/static/javascript/Letter.js"></script>
+<script type="text/javascript" src="{% static 'javascript/Letter.js' %}"></script>
 {% endblock %}

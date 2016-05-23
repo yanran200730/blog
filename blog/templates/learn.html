@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+{% load staticfiles %}
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/learn.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'highlight/styles/Solarized-Light.css' %}">
+{% endblock%}
+{% block title %}小清新音乐{% endblock %}
+{% block content %}
+    <article>
+        <div class="head_section">
+            <div class="link">
+                <a href="../">
+                    <span id="home_page">首页</span>
+                </a>
+                <span id="gt">&gt;</span>
+                <span>知识</span>
+             </div>
+            <div class="title_block">
+                <h1>知识</h1>
+                <p>小清新音乐、治愈系音乐、唯美音乐、有声读物、声音电台、温暖动听的声音</p>
+            </div>
+        </div>
+        <div class="content_section">
+            <div></div>
+                <p class="code_content">
+                    {{ conding.article|custom_markdown }}
+                </p>
+            </div>        
+        </div>    
+    </article>
+    <script type="text/javascript" src="{% static 'javascript/learn.js' %}"></script>
+    <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script> 
+    <script>hljs.initHighlightingOnLoad();</script>  
+{% endblock %}

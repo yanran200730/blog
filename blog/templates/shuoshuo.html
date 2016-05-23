@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block extracss %} <link rel="stylesheet" type="text/css" href="../static/css/shuoshuo.css">{% endblock%}
+{% load staticfiles %}
+{% block extracss %} <link rel="stylesheet" type="text/css" href="{% static 'css/shuoshuo.css' %}">{% endblock%}
 {% load pagination_tags %}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
@@ -23,7 +24,6 @@
                     <div class="block">
                         <div class="img">
                             <a href="{% url 'Letter' id=item.id %}">
-                                {% load staticfiles %}
                                 <img src="{% static item.img %}">
                             </a>
                         </div>
@@ -37,5 +37,5 @@
             {% paginate %}
         </div>    
     </article>
-    <script type="text/javascript" src="../static/javascript/shuoshuo.js"></script>  
+    <script type="text/javascript" src="{% static 'javascript/shuoshuo.js' %}"></script>  
 {% endblock %}
