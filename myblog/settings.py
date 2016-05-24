@@ -25,7 +25,8 @@ SECRET_KEY = '=xb#(1wc_fs4gbm)u#i4ki6giwub2%$whr^jkbm4+axwp5l$ws'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = (
     # 'duoshuo',
     'pagedown',
 )
+
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",

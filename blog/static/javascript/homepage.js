@@ -160,14 +160,14 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	$(".body").each(function(){
-		var max_width = 90;
-		if($(this).text().length>max_width){
-			$(this).text($(this).text().substring(0,max_width));
-			$(this).html($(this).html()+"......");
-		}
-	});
-});
+// $(document).ready(function(){
+// 	$(".body").each(function(){
+// 		var max_width = 90;
+// 		if($(this).text().length>max_width){
+// 			$(this).text($(this).text().substring(0,max_width));
+// 			$(this).html($(this).html()+"......");
+// 		}
+// 	});
+// });
 
 
