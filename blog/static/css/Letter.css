@@ -35,6 +35,9 @@ article {
 	border-radius: 4px;
 }
 
+.content_section {
+	margin-bottom: 20px; 
+}
 
 .content_block h1 {
 	color: #040404;

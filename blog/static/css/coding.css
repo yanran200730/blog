@@ -4,6 +4,7 @@ article {
 	margin-top: 20px;
 	float: left;
 	width: 720px;
+	margin-bottom: 200px;
 }
 
 .block_side {
@@ -20,7 +21,7 @@ article {
 	margin-right: 10px;
 }
 
-#shuoshuo:hover,#home_page:hover {
+#code:hover,#home_page:hover {
 	color: #585858;
 }
 
@@ -71,3 +72,6 @@ pre code {
     margin:15px 0;
     letter-spacing :0.5px;
 }
+
+/*多说样式设置*/
+

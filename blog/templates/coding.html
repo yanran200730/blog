@@ -15,7 +15,7 @@
                 </a>
                     <span id="gt">&gt;</span>
                 <a href="../">
-                    <span>编程</span>
+                    <span id="code">编程</span>
                 </a>
             </div>
             <span class="tag">{{ code_article.tag }}</span>
@@ -29,7 +29,9 @@
         	   <p class="article">{{ code_article.article|custom_markdown }}</p>
             </div>
         </dir>
+        <div class="ds-thread" data-thread-key="{{ code_article.id }}" data-title="{{ code_article.title }}" data-url="{% url 'coding' id=code_article.id %}"></div>    
 	</article>
+    <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
 	<script type="text/javascript" src="{% static 'javascript/coding.js' %}"></script>
     <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script> 
     <script>hljs.initHighlightingOnLoad();</script>
