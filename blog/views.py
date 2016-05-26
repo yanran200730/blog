@@ -171,9 +171,10 @@ def blog(request,id):
         article = Article.objects.get(id=str(id))
     except (Article.DoesNotExist):
         raise Http404#待定义
-    current_url = request.get_host()+request.path
-    print (type(article.img))
-    return render_to_response("blog.html",{"article":article,"current_url":current_url})
+    current_url = "http://"+request.get_host()+request.path
+    domain = "http://"+request.get_host()
+    print(domain)
+    return render_to_response("blog.html",{"article":article,"current_url":current_url,"domain":domain})
 
 def music(request):
     return render_to_response("music.html")

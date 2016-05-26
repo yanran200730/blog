@@ -28,13 +28,14 @@
         	</div>
         	<p class="article">{{ article.article }}</p>
         </dir>
-        <div class="ds-share" data-thread-key="{{ article.id }}" data-title="{{ article.title }}" data-images="{{ request.get_host }}{{ article.img }}" data-content="{{  article.article }}" data-url="{{ current_url }}">
-            <div class="ds-zan">
-                <a class="zan new " href="javascript:void(0);" data-service="weibo">
-                    <i class="fa fa-thumbs-up fa-lg"></i>
+        <div class="ds-zan">
+            <a class="zan new " href="javascript:;">
+                <i class="fa fa-thumbs-up fa-lg"></i>
                     赞
-                </a>
-            </div>
+            </a>
+        </div>
+        <div class="ds-share" data-thread-key="blog-{{ article.id }}" data-title="{{ article.title }}" data-images="{{ domain }}{{ article.img }}" data-content="{{  article.article }}" data-url="{{ current_url }}">
+
             <div class="ds-share-inline">
               <ul  class="ds-share-icons-16">
                 <li>
@@ -50,7 +51,7 @@
                     </a>
                 </li>
                 <li data-toggle="ds-share-icons-more">
-                    <a class="ds-more new" href="javascript:void(0);">
+                    <a class="ds-more new" href="javascript:;">
                         <i class="fa fa-share-alt fa-lg"></i>
                         更多
                     </a>

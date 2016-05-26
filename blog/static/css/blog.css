@@ -82,7 +82,10 @@ article {
 }
 
 .ds-zan {
-	float:left;
+	position: relative;
+	left: 0;
+	top: 38px;
+	display: inline-block;
 }
 
 
@@ -132,13 +135,13 @@ article {
 }
 
 .ds-more:hover {
-	background-color: #DFF6A8 !important;
+	background-color: #4DB2EC !important;
 	color: white !important;
 }
 
 #ds-share #ds-reset .ds-share-icons-more {
 	left: 638px !important;
-	top: -176px !important;
+	top: -250px !important;
 }
 
 .ds-share-icons-footer {
