@@ -155,7 +155,9 @@ def mood(request,id):
         feel = Feeling.objects.get(id=str(id))
     except (Feeling.DoesNotExist):
     	raise Http404
-    return render_to_response("Letter.html",{"feel":feel})
+    current_url = "http://"+request.get_host()+request.path
+    domain = "http://"+request.get_host()+"/"      
+    return render_to_response("Letter.html",{"feel":feel,"current_url":current_url,"domain":domain})
 
 def article(request):
     articles = Article.objects.order_by("-createTime")
@@ -173,7 +175,6 @@ def blog(request,id):
         raise Http404#待定义
     current_url = "http://"+request.get_host()+request.path
     domain = "http://"+request.get_host()
-    print(domain)
     return render_to_response("blog.html",{"article":article,"current_url":current_url,"domain":domain})
 
 def music(request):
@@ -191,7 +192,10 @@ def coding(request,id):
         code_article =  Coding.objects.get(id=str(id))
     except (Coding.DoesNotExist):
         raise Http404
-    return render_to_response("coding.html",{"code_article":code_article})
+    current_url = "http://"+request.get_host()+request.path
+    domain = "http://"+request.get_host()
+    print(current_url)    
+    return render_to_response("coding.html",{"code_article":code_article,"current_url":current_url,"domain":domain})
 
 
 

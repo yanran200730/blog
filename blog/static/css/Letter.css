@@ -70,3 +70,80 @@ article {
 	margin: 0px auto;
 }
 
+/*分享样式*/
+
+.ds-share {
+	width: 100%;
+	height: 32px;
+	padding-bottom: 20px;
+	margin-bottom: 40px !important;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.ds-zan {
+	position: relative;
+	left: 0;
+	top: 38px;
+	display: inline-block;
+}
+
+
+.ds-share-icons-16 {
+	float: right !important;
+}
+
+.new {
+	display: inline-block;
+	background-image: none !important;
+	border-radius: 20px;
+	padding: 0px 16px !important;
+    line-height: 32px !important;
+    height: 32px! important;
+    font-size: 13px!important;
+}
+
+.ds-weibo {
+	color: #E14D4C !important;
+}
+
+.ds-wechat {
+	color: #40B440 !important;
+}
+
+.zan {
+	color: #E14D4C;
+}
+
+.ds-more {
+	color: #4DB2EC !important;
+}
+
+.zan:hover {
+	background-color: #E77170 !important;
+	color: white !important;
+}
+
+.weibo:hover {
+	background-color: #E77170 !important;
+	color: white !important;
+}
+
+.wechat:hover {
+	background-color: #66C366 !important;
+	color: white !important;
+}
+
+.ds-more:hover {
+	background-color: #4DB2EC !important;
+	color: white !important;
+}
+
+#ds-share #ds-reset .ds-share-icons-more {
+	left: 638px !important;
+	top: -250px !important;
+}
+
+.ds-share-icons-footer {
+	background-color: white !important;
+}
+

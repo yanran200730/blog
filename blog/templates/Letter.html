@@ -30,7 +30,39 @@
                 <img id="img" src="{% static feel.img %}">
             </div>
         </div>
-        <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.title }}" data-url="{% url 'Letter' id=feel.id %}"></div>
+        <div class="ds-zan">
+            <a class="zan new " href="javascript:;">
+                <i class="fa fa-thumbs-up fa-lg"></i>
+                    赞
+            </a>
+        </div>
+        <div class="ds-share" data-thread-key="Letter-{{ feel.id }}" data-title="{{ feel.title }}" data-images="{{ domain }}{{ feel.img }}" data-content="{{  feel.article }}" data-url="{{ current_url }}">
+            <div class="ds-share-inline">
+                <ul  class="ds-share-icons-16">
+                    <li>
+                        <a class="ds-weibo new weibo" href="javascript:void(0);" data-service="weibo">
+                            <i class="fa fa-weibo fa-lg"></i>
+                            分享到新浪微博
+                        </a>
+                    </li>
+                    <li>
+                        <a class="ds-wechat wechat new" href="javascript:void(0);" data-service="wechat">
+                            <i class="fa fa-wechat fa-lg"></i>
+                            分享到微信
+                        </a>
+                    </li>
+                    <li data-toggle="ds-share-icons-more">
+                        <a class="ds-more new" href="javascript:;">
+                            <i class="fa fa-share-alt fa-lg"></i>
+                            更多
+                        </a>
+                    </li>
+                </ul>
+                <div class="ds-share-icons-more">
+                </div>
+            </div>
+        </div>        
+        <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.title }}" data-url="{{ current_url }}"></div>
     </article>
     <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
     <script type="text/javascript" src="{% static 'javascript/Letter.js' %}"></script>
