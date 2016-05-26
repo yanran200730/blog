@@ -36,7 +36,7 @@
                     赞
             </a>
         </div>
-        <div class="ds-share" data-thread-key="Letter-{{ feel.id }}" data-title="{{ feel.title }}" data-images="{{ domain }}{{ feel.img }}" data-content="{{  feel.article }}" data-url="{{ current_url }}">
+        <div class="ds-share" data-thread-key="Letter-{{ feel.id }}" data-title="{{ feel.feeling }}" data-images="{{ domain }}{{ feel.img }}" data-content="{{  feel.feeling }}" data-url="{{ current_url }}">
             <div class="ds-share-inline">
                 <ul  class="ds-share-icons-16">
                     <li>
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>        
-        <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.title }}" data-url="{{ current_url }}"></div>
+        <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.feeling }}" data-url="{{ current_url }}"></div>
     </article>
     <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
     <script type="text/javascript" src="{% static 'javascript/Letter.js' %}"></script>
