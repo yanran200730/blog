@@ -9,7 +9,7 @@
 	font-size: 15px;
 }
 
-header {
+.header {
 	width: 100%;
 	height: 106px;
 	border-bottom: 1px solid #EFEDED;
@@ -20,9 +20,14 @@ header {
 	width: 1050px;
 }
 
+.logo_section {
+	float: left;
+}
+
 .logo {
 	padding-top: 10px;
-	float: left;
+	width: 272px;
+	height: 90px;
 }
 
 nav ul {
@@ -64,6 +69,22 @@ aside {
 	margin-top: 40px;
 }
 
+/*top 导航栏 滚动后的css样式*/
+
+.logo_scroll {
+	width: 126px;
+	height: 48px;
+}
+
+.head_scroll {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #EFEDED;	
+	position: fixed;
+	background-color: #EAEAEA;
+	top: 0px;
+}
+
 .block_side {
 	margin-bottom: 40px; 
 }
@@ -96,4 +117,30 @@ aside {
 	border-bottom: 1px solid #4db2ec;
 	font-family: 'Microsoft Yahei', Arial, 'Roboto', sans-serif;
 	line-height: 15px;
+}
+
+/*返回顶部*/
+
+.back_to_top {
+	position: fixed;
+	bottom: 180px;
+	right: 300px;
+	display: none;
+}
+
+.back_to_top .to_top {
+	display: block;
+	width: 58px;
+	height: 58px;
+	line-height: 58px;
+	text-align: center;
+	font-size: 40px;
+	color: #EBEBEB;
+	background-color: rgba(0,0,0,.2);
+	border: 1px solid #E8E8E8;
+}
+
+.back_to_top .to_top:hover {
+	background-color: #4db2ec;
+	color: white;
 }

@@ -44,7 +44,6 @@
 	width: 1050px;
 	height: 220px;
 	margin: 10px auto 0;
-	position: relative;
 }
 
 .img_link {
@@ -235,3 +234,5 @@ article {
 .char_lable a:hover {
 	background-color: #484848;
 }
+
+

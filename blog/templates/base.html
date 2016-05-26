@@ -8,17 +8,18 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" >
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+	<script src="{% static 'javascript/jquery.mousewheel.js' %}" type="text/javascript"></script>
 </head>
 <body>
-	<header>
+	<header id="header" class="header">
 		<div class="head">
-			<div class="logo">
+			<div class="logo_section">
 				<a href="/">
-					<img src="{% static 'img/logo.png' %}">
+					<img src="{% static 'img/logo.png' %}" class="logo" id="logo">
 				</a>
 			</div>
 			<nav id="navigation ">
-				<ul>
+				<ul id="ulist">
 					<li><a class="current_page nav" href="/">主页</a></li>
 					<li><a class="nav" href="{% url 'shuoshuo' %}">说说</a></li>
 					<li><a class="nav" href="{% url 'article' %}">文字</a></li>
@@ -65,6 +66,12 @@
 			</div>
 		</aside>
 	</section>
-	<footer></footer>
+	<div class="back_to_top" id="top">
+		<a href="javascript:;" class="to_top" id="to_top" title="返回顶部">
+			<i class="fa fa-angle-up fa-1x"></i>
+		</a>
+	</div>
+ 	<footer></footer>
+ 	<script type="text/javascript" src="{% static 'javascript/base.js' %}" charset="utf-8" ></script>
 </body>
 </html>

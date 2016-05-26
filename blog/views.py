@@ -174,7 +174,7 @@ def blog(request,id):
     except (Article.DoesNotExist):
         raise Http404#待定义
     current_url = "http://"+request.get_host()+request.path
-    domain = "http://"+request.get_host()
+    domain = "http://"+request.get_host()+"/"
     return render_to_response("blog.html",{"article":article,"current_url":current_url,"domain":domain})
 
 def music(request):
