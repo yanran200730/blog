@@ -1,14 +1,5 @@
 
 //jQuery 封装函数
-
-// $(function(){
-// 	$(".body").dotdotdot({
-// 		after:"a"
-// 	});
-// })
-
-
-
 (function($){
     $.receive = function(ele){
 		$.ajax({

@@ -197,6 +197,32 @@ def coding(request,id):
     print(current_url)    
     return render_to_response("coding.html",{"code_article":code_article,"current_url":current_url,"domain":domain})
 
+def zan(request):
+    if request.POST["content_type"] == "letter":
+        content_id = request.POST["count"] 
+        letter_content = Feeling.objects.get(id=content_id)
+        count = letter_content.like_times + 1
+        letter_content.like_times = count
+        letter_content.save()
+        return HttpResponse("success")
+    elif request.POST["content_type"] == "blog":
+        content_id = int(request.POST["count"])
+        article_content = Article.objects.get(id=content_id)
+        count = article_content.praise_count + 1
+        article_content.praise_count = count
+        article_content.save()
+        return HttpResponse("success")
+    elif request.POST["content_type"] == "code":
+        content_id = int(request.POST["count"])
+        print (content_id)
+        Coding_content = Coding.objects.get(id=content_id)
+        count = Coding_content.praise_count + 1
+        Coding_content.praise_count = count
+        Coding_content.save()
+        print (count)
+        return HttpResponse(count)                   
+
+
 
 
 

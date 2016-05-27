@@ -143,3 +143,27 @@ aside {
 	background-color: #4db2ec;
 	color: white;
 }
+
+#prompt {
+	display: none;
+	position: fixed;
+	bottom: 238px;
+	right: 310px;
+	border-left:6px solid transparent;   
+	border-right:6px solid transparent;   
+	border-top:12px solid #E7E7E7;
+}
+
+#prompt_content {
+	display: none;
+	background-color: #E7E7E7; 
+	position: fixed;
+	bottom: 247px;
+	right: 262px;
+	font-size: 12px;
+	padding: 7px 13px;
+	color: #808080;
+	border:1px solid #ccc;
+	border-radius:8px;
+	-moz-border-radius:8px; 
+}

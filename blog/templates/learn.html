@@ -44,9 +44,9 @@
                             浏览
                             <span class="view_count">{{ item.view_count }}</span>
                         </a>
-                        <a href="javascript:;" class="count" title="点赞次数">    
+                        <a id="zan" href="javascript:;" class="count" title="点赞次数" name="{{ item.id }}">    
                             <i class="fa fa-thumbs-up fa-1x"></i>
-                            赞
+                            <span id="init">赞</span>
                             <span class="praise_count">{{ item.praise_count }}</span>
                         </a>    
                     </div>    

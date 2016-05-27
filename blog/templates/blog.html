@@ -32,10 +32,10 @@
         	</div>
         	<p class="article">{{ article.article }}</p>
         </dir>
-        <div class="ds-zan">
+        <div class="ds-zan" id="zan" name= "{{ article.id }}">
             <a class="zan new " href="javascript:;">
                 <i class="fa fa-thumbs-up fa-lg"></i>
-                    赞
+                <span id="init">赞</span>
             </a>
         </div>
         <div class="ds-share" data-thread-key="blog-{{ article.id }}" data-title="{{ article.title }}" data-images="{{ domain }}{{ article.img }}" data-content="{{  article.article }}" data-url="{{ current_url }}">

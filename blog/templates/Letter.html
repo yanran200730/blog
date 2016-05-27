@@ -25,7 +25,7 @@
         <div class="content_section">
             <div class="block">
                 <div class="content_block">
-                    <h1 class="title">Letter.{{ feel.id }}</h1>
+                    <h1 class="title" id="title">Letter.{{ feel.id }}</h1>
                     <span class="date">作者：{{ feel.person.username }} &nbsp; - &nbsp; {{ feel.createTime|date:"Y / m / d" }}</span>
                     <span class="content_text">{{ feel.feeling }}</span>
                 </div>
@@ -34,10 +34,10 @@
                 <img id="img" src="{% static feel.img %}">
             </div>
         </div>
-        <div class="ds-zan">
+        <div class="ds-zan" id="zan">
             <a class="zan new " href="javascript:;">
                 <i class="fa fa-thumbs-up fa-lg"></i>
-                    赞
+                <span id="init">赞</span>
             </a>
         </div>
         <div class="ds-share" data-thread-key="Letter-{{ feel.id }}" data-title="{{ feel.feeling }}" data-images="{{ domain }}{{ feel.img }}" data-content="{{  feel.feeling }}" data-url="{{ current_url }}">
