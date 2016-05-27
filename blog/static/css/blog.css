@@ -88,6 +88,9 @@ article {
 	display: inline-block;
 }
 
+#init {
+	font-size: 13px;
+}
 
 .ds-share-icons-16 {
 	float: right !important;

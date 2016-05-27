@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$("#zan").bind("click",function(){
 		var count = $("#zan").attr("name");
 		var text = $("#init").html();
-		
+
 		if (text.length == 1){
 			$.ajax({
 				data:{"content_type":"blog","count":count},

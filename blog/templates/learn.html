@@ -38,15 +38,15 @@
                         <p>{{ item.article|truncatechars:210|cut:"#" }}</p>
                     </div>
                     <div class="foot_content">
-                        <a href="javasript:;" class="tag" title="Django">{{ item.tag }}</a>
-                        <a href="javascript:;" class="count" title="浏览次数" >
+                        <a class="tag" title="Django">{{ item.tag }}</a>
+                        <a class="count" title="浏览次数" >
                             <i class="fa fa-eye fa-1x"></i>
-                            浏览
+                            <span id="look" class="size">浏览</span>
                             <span class="view_count">{{ item.view_count }}</span>
                         </a>
-                        <a id="zan" href="javascript:;" class="count" title="点赞次数" name="{{ item.id }}">    
+                        <a id="zan" class="count" title="点赞次数" name="{{ item.id }}">    
                             <i class="fa fa-thumbs-up fa-1x"></i>
-                            <span id="init">赞</span>
+                            <span id="init" class="size">赞</span>
                             <span class="praise_count">{{ item.praise_count }}</span>
                         </a>    
                     </div>    
