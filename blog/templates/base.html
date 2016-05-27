@@ -2,7 +2,9 @@
 {% load staticfiles %}
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
 	<title>{% block title %}{% endblock %}</title>
 	{% block extracss %}{% endblock %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" >
@@ -73,5 +75,6 @@
 	</div>
  	<footer></footer>
  	<script type="text/javascript" src="{% static 'javascript/base.js' %}" charset="utf-8" ></script>
+ 	{% block extrajavascript %}{% endblock %}
 </body>
 </html>

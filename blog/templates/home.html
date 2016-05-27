@@ -3,6 +3,10 @@
 {% block extracss %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
 {% endblock%}
+{% block extrajavascript %}
+	<script type="text/javascript" src="{% static 'javascript/homepage.js' %}"></script>
+	<script src="//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"></script>
+{% endblock %}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
 	<dir class="img_zone ">
@@ -67,6 +71,4 @@
 			{% endfor %}
 		</div>
 	</article>
-	<script type="text/javascript" src="{% static 'javascript/homepage.js' %}"></script>
-	<script src="//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"></script>
 {% endblock %}

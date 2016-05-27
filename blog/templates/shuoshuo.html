@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block extracss %} <link rel="stylesheet" type="text/css" href="{% static 'css/shuoshuo.css' %}">{% endblock%}
+{% block extrajavascript %}<script type="text/javascript" src="{% static 'javascript/shuoshuo.js' %}"></script>{% endblock %}
+
 {% load pagination_tags %}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
@@ -37,5 +39,5 @@
             {% paginate %}
         </div>
     </article>
-    <script type="text/javascript" src="{% static 'javascript/shuoshuo.js' %}"></script>  
+    
 {% endblock %}

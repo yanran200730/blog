@@ -3,6 +3,10 @@
 {% block extracss %}
     <link rel="stylesheet" type="text/css" href="{%static 'css/Letter.css' %}" >
 {% endblock%}
+{% block extrajavascript %}
+    <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'javascript/Letter.js' %}"></script>
+{% endblock %}
 {% block title %}Letter.{{ feel.id }}{% endblock %}
 {% block content %}
     <article>
@@ -64,6 +68,4 @@
         </div>        
         <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.feeling }}" data-url="{{ current_url }}"></div>
     </article>
-    <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
-    <script type="text/javascript" src="{% static 'javascript/Letter.js' %}"></script>
 {% endblock %}

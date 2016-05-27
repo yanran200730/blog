@@ -3,6 +3,9 @@
 {% block extracss %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/music.css' %}" >
 {% endblock%}
+{% block extrajavascript %}
+    <script type="text/javascript" src="{% static 'javascript/music.js' %}"></script>  
+{% endblock %}
 {% block title %}小清新音乐{% endblock %}
 {% block content %}
     <article>
@@ -20,5 +23,4 @@
             </div>
         </div>    
     </article>
-    <script type="text/javascript" src="{% static 'javascript/music.js' %}"></script>  
 {% endblock %}
