@@ -4,8 +4,8 @@
 	margin-top: 70px;
 }
 
-article {
-	width: 720px; 
+.article {
+	width: 720px;
 	margin-top: 20px;
 	float: left;
 }
@@ -52,7 +52,7 @@ article {
 
 .section_content {
 	display: inline-block;
-	width: 324px;
+	width: 323px;
 	height: 228px;
 	margin: 0px 34px 15px 0;
 }

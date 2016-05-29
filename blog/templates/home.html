@@ -27,7 +27,7 @@
 			</div>
 		</dir>
 	</dir>
-	<article class="main">
+	<div class="main">
 		<div class="block">
 			<div class="subtitle">
 				<span>说说</span>
@@ -57,7 +57,7 @@
 			{% for item in article_list %}
 				<div class="content_block" >
 					<div class="char_img">
-						<a href="{% url 'blog' id=item.id %}" title="{{ item.title }}">	
+						<a href="{% url 'blog' id=item.id %}" title="{{ item.title }}">
 							<img src="{% static item.img %}">
 						</a>
 					</div>
@@ -70,5 +70,5 @@
 				</div>
 			{% endfor %}
 		</div>
-	</article>
+	</div>
 {% endblock %}

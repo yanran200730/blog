@@ -1,6 +1,6 @@
 @charset:utf-8;
 
-article {
+.article {
 	margin-top: 20px; 
 	float: left;
 	width: 720px;

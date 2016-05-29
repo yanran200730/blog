@@ -8,12 +8,12 @@
 {% block extrajavascript %}
     <script type="text/javascript" src="{% static 'duoshuo/duoshuo.js' %}"></script>
     <script type="text/javascript" src="{% static 'javascript/coding.js' %}"></script>
-    <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
 {% block title %}{{ code_article.title }}{% endblock %}
 {% block content %}
-	<article>
+	<div class="article">
         <div class="head_section">
             <div class="navigation">
                 <a href="/">
@@ -67,7 +67,7 @@
                 <div class="ds-share-icons-more">
                 </div>
             </div>
-        </div>        
-        <div class="ds-thread" data-thread-key="{{ code_article.id }}" data-title="{{ code_article.title }}" data-url="{{ current_url }}"></div>    
-	</article>
+        </div>
+        <div class="ds-thread" data-thread-key="{{ code_article.id }}" data-title="{{ code_article.title }}" data-url="{{ current_url }}"></div>
+	</div>
 {% endblock %}
