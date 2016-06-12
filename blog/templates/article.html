@@ -6,7 +6,7 @@
 {% load pagination_tags %}
 {% block title %}那烛火未明 摇曳满地的冷清{% endblock %}
 {% block content %}
-    <article>
+    <div class="article">
         <div class="head_section">
             <div class="link">
                 <a href="../">
@@ -20,24 +20,23 @@
                 <p>小清新文字、治愈系文字、唯美的文字、散文随笔，我们都是文字控</p>
             </div>
         </div>
-        </div>    
-        <div class="content_section"> 
+        <div class="content_section">
             {% autopaginate article_list 8 %}
                 {% for item in article_list %}
-        	        <div class="section_content"> 
+        	        <div class="section_content">
         	        	<div class="article_img">
                             <a href="{% url 'blog' id=item.id %}">
             	        		<img title="{{ item.title }}" src="{% static item.img %}">
-                            </a>    
-        	        	</div> 
-        	        	<div class="section_char"> 
+                            </a>
+        	        	</div>
+        	        	<div class="section_char">
         	        		<h3 class="title">{{ item.title }}</h3>
         	        		<span class="article_content">{{ item.author.username }} - {{ item.createTime|date:"Y / m / d" }}</span>
         	    		</div>
-            	    </div> 
+            	    </div>
     	        {% endfor %}
             {% paginate %}
         </div>
-	</article>
+	</div>
 	<script type="text/javascript" src="{% static 'javascript/article.js' %}"></script>
 {% endblock %}

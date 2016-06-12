@@ -9,7 +9,7 @@
 {% endblock %}
 {% block title %}Letter.{{ feel.id }}{% endblock %}
 {% block content %}
-    <article>
+    <div class="article">
         <div class="head_section">
             <div class="navigation">
                 <a href="/">
@@ -65,7 +65,7 @@
                 <div class="ds-share-icons-more">
                 </div>
             </div>
-        </div>        
+        </div>
         <div class="ds-thread" data-thread-key="{{ feel.id }}" data-title="{{ feel.feeling }}" data-url="{{ current_url }}"></div>
-    </article>
+    </div>
 {% endblock %}

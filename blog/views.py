@@ -83,6 +83,7 @@ def register(request):
         userinfor.save()
         data["url"] = "http://127.0.0.1:8000/"
         return HttpResponse(json.dumps(data),content_type="application/json")
+
 #每日一说ajax post请求
 def say(request):
     once_say = Say.objects.all()
@@ -93,13 +94,13 @@ def say(request):
 #主页html
 def home(request):
     feels = Feeling.objects.order_by("-id")#说说
-    articles = Article.objects.order_by("-createTime")#文字
+    articles = Article.objects.order_by("-id")#文字
     length = math.ceil(len(feels)/5)
     feel_list = list()
     article_list = list()
     for i in range(5):
         feel_list.append(feels[i])               #心情
-    for j in range(3):
+    for j in range(5):
         article_list.append(articles[j])         #文字
     return render_to_response("home.html",{"feel_list":feel_list,"article_list":article_list,"length":length})
 
@@ -144,7 +145,7 @@ def like_count(request):
     return HttpResponse(send_data)
 
 def shuoshuo(request):
-    feels = Feeling.objects.order_by("-createTime")
+    feels = Feeling.objects.order_by("-id")
     feels_list = list()
     for i in range(len(feels)):
         feels_list.append(feels[i])
@@ -156,11 +157,11 @@ def mood(request,id):
     except (Feeling.DoesNotExist):
     	raise Http404
     current_url = "http://"+request.get_host()+request.path
-    domain = "http://"+request.get_host()+"/"      
+    domain = "http://"+request.get_host()+"/"
     return render_to_response("Letter.html",{"feel":feel,"current_url":current_url,"domain":domain})
 
 def article(request):
-    articles = Article.objects.order_by("-createTime")
+    articles = Article.objects.order_by("-id")
     article_list = list()
     for i in range(len(articles)):
         article_list.append(articles[i])
@@ -194,12 +195,12 @@ def coding(request,id):
         raise Http404
     current_url = "http://"+request.get_host()+request.path
     domain = "http://"+request.get_host()
-    print(current_url)    
+    print(current_url)
     return render_to_response("coding.html",{"code_article":code_article,"current_url":current_url,"domain":domain})
 
 def zan(request):
     if request.POST["content_type"] == "letter":
-        content_id = request.POST["count"] 
+        content_id = request.POST["count"]
         letter_content = Feeling.objects.get(id=content_id)
         count = letter_content.like_times + 1
         letter_content.like_times = count
@@ -214,13 +215,11 @@ def zan(request):
         return HttpResponse("success")
     elif request.POST["content_type"] == "code":
         content_id = int(request.POST["count"])
-        print (content_id)
         Coding_content = Coding.objects.get(id=content_id)
         count = Coding_content.praise_count + 1
         Coding_content.praise_count = count
         Coding_content.save()
-        print (count)
-        return HttpResponse(count)                   
+        return HttpResponse(count)
 
 
 

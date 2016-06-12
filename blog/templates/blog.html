@@ -9,7 +9,7 @@
 {% endblock %}
 {% block title %}{{ article.title }}{% endblock %}
 {% block content %}
-	<article>
+	<div class="article">
         <div class="head_section">
             <div class="navigation">
                 <a href="/">
@@ -65,5 +65,5 @@
             </div>
         </div>
         <div class="ds-thread" data-thread-key="{{ article.id }}" data-title="{{ article.title }}" data-url="{{ current_url }}"></div>
-    </article>
+    </div>
 {% endblock %}
