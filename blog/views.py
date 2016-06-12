@@ -221,8 +221,8 @@ def zan(request):
         Coding_content.save()
         return HttpResponse(count)
 
-
-
-
+#手机测试页面 视图函数
+def mobile(request):
+    return render_to_response("mobile.html")
 
 
