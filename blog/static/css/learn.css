@@ -51,15 +51,19 @@
 }
 
 .content_section {
+	margin-top: 40px;
+}
+
+.mian_section {
+	margin-bottom: 30px;
 	background-color: #F7F6F6;
 	border: 1px solid #DCDCDC;
 	height: 200px;
 	width: 650px;
-	margin-top: 40px;
 	border-radius: 8px;
    -webkit-box-shadow: #DCDCDC 0px 0px 10px;  
    -moz-box-shadow: #DCDCDC 0px 0px 10px;  
-   box-shadow: #DCDCDC 0px 0px 10px;  	
+   box-shadow: #DCDCDC 0px 0px 10px;  		
 }
 
 .head_content {
