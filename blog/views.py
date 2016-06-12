@@ -39,18 +39,18 @@ import math
 
 #ajax发送post请求，django以json响应
 def login(request):
-    print (111)
+    url_host = request.get_host()
     data = dict()
     users = User.objects.all()
     if request.method == "POST":
-        print (111111)
         user   = request.POST["username"]
         pd = request.POST["password"]
         for i in range(len(users)):
             msg = ""
             if user == users[i].username:
                 if pd == users[i].passwd:
-                    data["url"] = "http://127.0.0.1:8000/"
+                    data["url"] = "http://" + url_host +"/"
+                    print (data["url"])
                     return HttpResponse(json.dumps(data),content_type="application/json")
                 else:
                     msg += "密码错误"
@@ -81,7 +81,6 @@ def register(request):
                 break
         userinfor = User(username=user,passwd=pd,email=Email)
         userinfor.save()
-        data["url"] = "http://127.0.0.1:8000/"
         return HttpResponse(json.dumps(data),content_type="application/json")
 
 #每日一说ajax post请求
@@ -186,7 +185,7 @@ def learn(request):
     code_article  = list()
     for i in range(len(condings)):
         code_article.append(condings[i])
-    return render_to_response("learn.html",{"code_article":code_article})
+    return render_to_response("learn.html",{"code_article":code_article},context_instance=RequestContext(request))
 
 def coding(request,id):
     try:

@@ -9,6 +9,7 @@
 <!--     <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script> -->
 {% endblock %}
+{% load pagination_tags %}
 {% block title %}小清新音乐{% endblock %}
 {% block content %}
     <div class="article">
@@ -27,32 +28,34 @@
         </div>
         <div class="content_section">
             <div class="body_section">
-                {% for item in code_article %}
-                    <div class="mian_section">
-                        <div class="head_content">
-                            <h3>
-                                <a title="{{ item.title }}" href="{% url 'coding' id=item.id %}">{{ item.title }}</a>
-                            </h3>
-                             <span>作者：{{ item.author }}&nbsp; -  &nbsp;{{ item.createTime|date:" Y / m / d " }}</span>
-                        </div>
-                        <div class="body_content">
-                            <p>{{ item.article|truncatechars:210|cut:"#" }}</p>
-                        </div>
-                        <div class="foot_content">
-                            <a class="tag" title="Django">{{ item.tag }}</a>
-                            <a class="count" title="浏览次数" >
-                                <i class="fa fa-eye fa-1x"></i>
-                                <span id="look" class="size">浏览</span>
-                                <span class="view_count">{{ item.view_count }}</span>
-                            </a>
-                            <a id="zan" class="count" title="点赞次数" name="{{ item.id }}">    
-                                <i class="fa fa-thumbs-up fa-1x"></i>
-                                <span id="init" class="size">赞</span>
-                                <span class="praise_count">{{ item.praise_count }}</span>
-                            </a>    
-                        </div>
-                    </div>    
-                {% endfor %}
+                {% autopaginate code_article 5 %}
+                    {% for item in code_article %}
+                        <div class="mian_section">
+                            <div class="head_content">
+                                <h3>
+                                    <a title="{{ item.title }}" href="{% url 'coding' id=item.id %}">{{ item.title }}</a>
+                                </h3>
+                                 <span>作者：{{ item.author }}&nbsp; -  &nbsp;{{ item.createTime|date:" Y / m / d " }}</span>
+                            </div>
+                            <div class="body_content">
+                                <p>{{ item.article|truncatechars:210|cut:"#" }}</p>
+                            </div>
+                            <div class="foot_content">
+                                <a class="tag" title="Django">{{ item.tag }}</a>
+                                <a class="count" title="浏览次数" >
+                                    <i class="fa fa-eye fa-1x"></i>
+                                    <span id="look" class="size">浏览</span>
+                                    <span class="view_count">{{ item.view_count }}</span>
+                                </a>
+                                <a id="zan" class="count" title="点赞次数" name="{{ item.id }}">    
+                                    <i class="fa fa-thumbs-up fa-1x"></i>
+                                    <span id="init" class="size">赞</span>
+                                    <span class="praise_count">{{ item.praise_count }}</span>
+                                </a>    
+                            </div>
+                        </div>    
+                    {% endfor %}
+                {% paginate %}
             </div>    
         </div>
     </div>

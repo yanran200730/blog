@@ -18,8 +18,7 @@ $(document).ready(function(){
 	 				$("#msg").html(data["msg"]);
 	 			}
 	 			else{
-	 				location.href = "http://www.qxfun.com/mood_category/one-thousand-and-one-letters/page/2"
-	 				// location.href = "http:/www.baidu.com"//data["url"];
+	 				location.href = data["url"] + "adminfjsdklfjdisfusfhdshf/"
 	 			}
 	 		},
 	 		error: function(){
