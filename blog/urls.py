@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^music/$',views.music,name="music"),
     url(r'^learn/$',views.learn,name="learn"),
     url(r'^learn/article_coding-(?P<id>[0-9]{1,})/$',views.coding,name ="coding"),
-    url(r'^zan/$',views.zan,name="zan")
+    url(r'^zan/$',views.zan,name="zan"),
+    url(r'^mobile$',views.mobile)
 ]
