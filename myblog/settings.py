@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'pagination',
     #'duoshuo',
     'pagedown',
+    'wechat',
 )
 
 
