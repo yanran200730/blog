@@ -1,0 +1,12 @@
+@charset: utf-8;
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+ul ol li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
