@@ -67,7 +67,7 @@ def wechat(request):
         else:
             reply_text = (
                 '自己玩泥巴去吧 ^ _ ^\n'
-                '【<a href="http://6a071219.ngrok.natapp.cn/demo2/">小心的博客</a>】')
+                '【<a href="http://6a071219.ngrok.natapp.cn/demo1/">小心的博客</a>】')
  
         response = wechat_instance.response_text(content=reply_text)
  
