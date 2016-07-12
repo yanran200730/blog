@@ -4,6 +4,7 @@
 	padding: 0px;
 	margin: 0px;
 	color: #4FB95A;
+	font-size: 1em;
 }
 
 ul ol li {
@@ -13,7 +14,7 @@ ul ol li {
 }
 
 div {
-	width: 300px;
+	width: 100%;
 	height: 300px;
 	background-color: red;
 }
