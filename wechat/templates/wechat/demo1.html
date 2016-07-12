@@ -8,11 +8,61 @@
 	<title>demo</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'wechat/css/demo1.css' %}">
 </head>
-<body>
-	<div>
-		<p>Hello Django!</p>
-		<button id="btn">click me</button>
+<body ng-app="myapp">
+	<div id="content" ng-controller="myctrl">
+		div:<input type="checkbox" ng-model="mycheck">
+		<button ng-click="change()">clcik</button>
+		<div class="slide-banner">
+			<ul ng-class="mycheck?show:''">
+				<li class="card">
+					<a href="##">
+						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
+					</a>
+				</li>
+				<li class="card">
+					<a href="##">
+						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
+					</a>
+				</li>
+				<li class="card">
+					<a href="##">
+						<img src="{% static 'wechat/image/img2.jpg' %}" alt="">
+					</a>
+				</li>
+				<li class="card">
+					<a href="##">
+						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
+					</a>
+				</li>
+				<li class="card">
+					<a href="##">
+						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
+	<footer id="footer">
+		<a>
+			<i class="iconfont">&#xe6b8;</i>
+			<p>首页</p>	
+		</a>
+		<a>
+			<i class="iconfont">&#xe667;</i>
+			<p>说说</p>
+		</a>
+		<a>
+			<i class="iconfont">&#xe795;</i>
+			<p>文字</p>
+		</a>
+		<a>
+			<i class="iconfont">&#xe7ad;</i>
+			<p>编程</p>
+		</a>
+	</footer>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular.min.js"></script>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular-route.js"></script>
+	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular-animate.min.js"></script>
 	<script type="text/javascript" src="{% static 'wechat/javascript/jquery.js' %}"></script>
 	<script type="text/javascript" src="{% static 'wechat/javascript/demo1.js' %}"></script>
 </body>
