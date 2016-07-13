@@ -1,4 +1,4 @@
-var myapp = angular.module('myapp', ['ngAnimate']);
+var myapp = angular.module('myapp', ['animate']);
 
 myapp.controller('myctrl', ['$scope', function($scope){
 	$scope.hide = "hidden";
@@ -6,35 +6,31 @@ myapp.controller('myctrl', ['$scope', function($scope){
 	$scope.mycheck = false;
 	$scope.str = "str";
 	$scope.change = function(){
-		console.log($scope.mycheck)
 		if ($scope.mycheck){
 			$scope.mycheck = false;
-			console.log($scope.mycheck)
 		}else{
 			$scope.mycheck = true;			
 		}
-		console.log($scope.mycheck)
 	}
-}])
+}]);
 
-
-// myapp.directive('change', ['', function(){
-// 	// Runs during compile
-// 	return {
-// 		// name: '',
-// 		// priority: 1,
-// 		// terminal: true,
-// 		// scope: {}, // {} = isolate, true = child, false/undefined = no change
-// 		// controller: function($scope, $element, $attrs, $transclude) {},
-// 		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-// 		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-// 		// template: '',
-// 		// templateUrl: '',
-// 		// replace: true,
-// 		// transclude: true,
-// 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-// 		link: function($scope, element,, attrs) {
-			
-// 		}
-// 	};
-// }]);
+myapp.directive('change',function(){
+	var index = 0;
+	var left = "-10rem";
+	return {
+		restrict: 'A',
+		link: function($scope, element, attrs){		
+			setInterval(function(){
+				index ++;
+				index = index % 5;
+				element.css("left",left);
+				left = (parseInt(left) - parseInt("10rem")) + "rem";
+				if ((element.css("left") == "-40rem")){
+					// element.css('transform','translate3d(20rem,0,0)');
+					left = "-10rem";
+				}
+									alert(element.css("left"));
+			},2000)
+		}
+	}
+})

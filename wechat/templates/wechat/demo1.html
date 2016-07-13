@@ -1,69 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 {% load staticfiles %}
-<html lang="en">
+<html lang="en" ng-app="myapp">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,user-scalable=no"> 
-	<title>demo</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'wechat/css/demo1.css' %}">
+    <script src="https://cdn.bootcss.com/angular.js/1.5.6/angular.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.5.6/angular-animate.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/0.3.0/angular-ui-router.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-touch/1.5.7/angular-touch.min.js"></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/controllers.js' %} "></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/filters.js' %}"></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/services.js' %}"></script>
+    <script type="text/javascript" src="{% static 'wechat/javascript/directives.js' %}"></script>
+    <title>demo</title>
 </head>
-<body ng-app="myapp">
-	<div id="content" ng-controller="myctrl">
-		div:<input type="checkbox" ng-model="mycheck">
-		<button ng-click="change()">clcik</button>
-		<div class="slide-banner">
-			<ul ng-class="mycheck?show:''">
-				<li class="card">
-					<a href="##">
-						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
-					</a>
-				</li>
-				<li class="card">
-					<a href="##">
-						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
-					</a>
-				</li>
-				<li class="card">
-					<a href="##">
-						<img src="{% static 'wechat/image/img2.jpg' %}" alt="">
-					</a>
-				</li>
-				<li class="card">
-					<a href="##">
-						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
-					</a>
-				</li>
-				<li class="card">
-					<a href="##">
-						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<footer id="footer">
-		<a>
-			<i class="iconfont">&#xe6b8;</i>
-			<p>首页</p>	
-		</a>
-		<a>
-			<i class="iconfont">&#xe667;</i>
-			<p>说说</p>
-		</a>
-		<a>
-			<i class="iconfont">&#xe795;</i>
-			<p>文字</p>
-		</a>
-		<a>
-			<i class="iconfont">&#xe7ad;</i>
-			<p>编程</p>
-		</a>
-	</footer>
-	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular.min.js"></script>
-	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular-route.js"></script>
-	<script src="https://cdn.bootcss.com/angular.js/1.5.7/angular-animate.min.js"></script>
-	<script type="text/javascript" src="{% static 'wechat/javascript/jquery.js' %}"></script>
-	<script type="text/javascript" src="{% static 'wechat/javascript/demo1.js' %}"></script>
+
+<body>
+    <div ui-view>
+    </div>
+    <footer id="footer">
+            <a>
+                <i class="iconfont">&#xe6b8;</i>
+                <p>首页</p>   
+            </a>
+            <a>
+                <i class="iconfont">&#xe667;</i>
+                <p>说说</p>
+            </a>
+            <a>
+                <i class="iconfont">&#xe795;</i>
+                <p>文字</p>
+            </a>
+            <a>
+                <i class="iconfont">&#xe7ad;</i>
+                <p>编程</p>
+            </a>
+    </footer>
 </body>
 </html>
