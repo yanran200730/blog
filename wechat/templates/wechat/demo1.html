@@ -13,28 +13,28 @@
 		div:<input type="checkbox" ng-model="mycheck">
 		<button ng-click="change()">clcik</button>
 		<div class="slide-banner">
-			<ul ng-class="mycheck?show:''">
-				<li class="card">
+			<ul ng-class="mycheck?show:''" change>
+				<li class="card active">
 					<a href="##">
 						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
 					</a>
 				</li>
-				<li class="card">
+				<li class="card hidden">
 					<a href="##">
 						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
 					</a>
 				</li>
-				<li class="card">
+				<li class="card hidden">
 					<a href="##">
 						<img src="{% static 'wechat/image/img2.jpg' %}" alt="">
 					</a>
 				</li>
-				<li class="card">
+				<li class="card hidden">
 					<a href="##">
 						<img src="{% static 'wechat/image/img3.jpg' %}" alt="">
 					</a>
 				</li>
-				<li class="card">
+				<li class="card hidden">
 					<a href="##">
 						<img src="{% static 'wechat/image/img1.jpg' %}" alt="">
 					</a>
