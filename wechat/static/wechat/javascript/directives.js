@@ -1,13 +1,14 @@
 var myDirectives = angular.module('myDirectives', ['myCtrls']);
 
-myDirectives.directive('change',function(){
-	var index = 0;
+myDirectives.directive('move',function($timeout){
+	var timer= null;
 	return {
 		restrict: 'A',
 		link: function($scope,element,attrs){
+			var index = 0;
 			setInterval(function(){
-
-			},2000)
+				
+			},1000)
 		}
 	}
 })

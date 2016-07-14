@@ -9,7 +9,7 @@ myapp.config(['$stateProvider',function($stateProvider) {
         .state('home',{
             url:'',
             templateUrl: "/static/wechat/angular-templates/wechat.html",
-            controller: "myCtrl"
+            controller: "slideCtrl"
 
         }).state('blog.detail',{
             // url:'/:blogID',
@@ -18,3 +18,23 @@ myapp.config(['$stateProvider',function($stateProvider) {
             // }
         });
 }])
+
+
+myapp.animation('.view-slide-in', function () {
+    return {
+        enter: function(element,done){
+            var width = element.width();
+            element.css({
+                opacity:0
+            })
+            .animate({
+                opacity:1
+            },200,done)
+        },
+        leave:function(element,done){
+            // element.css({
+
+            // })
+        }
+    }
+});
