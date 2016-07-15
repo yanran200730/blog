@@ -2,7 +2,7 @@
 
 html {
 	font-size: 57px;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 body,ul,li,p {
@@ -16,7 +16,7 @@ ul,ol {
 
 body {
 	background-color: #eff0f0; 
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 @font-face {
@@ -65,7 +65,7 @@ body {
 #slide-banner {
 	transition: all ease-in-out 1s;
 	position: relative;
-	/*overflow: hidden;*/
+	overflow: hidden;
 	width: 10rem;
 	height: 3.5rem;
 	margin: 0rem auto;
@@ -75,6 +75,7 @@ body {
 	position: absolute;
 	width: 50rem;
 	height: 100%;
+	left: 10rem;
 }
 
 .card {
@@ -83,7 +84,6 @@ body {
 	width: 10rem;
 	height: 100%;
 	float: left;
-	left:0rem;
 }
 
 .card img {
@@ -91,27 +91,41 @@ body {
 	height: 3.5rem;
 }
 
-.card-active {
-	transition: all 300ms ease;
-	transform: translate3d(0,0,0);
+.move-add , .move-remove {
+    -webkit-transition:all ease-in-out 1.5s;
+    -moz-transition:all ease-in-out 1.5s;
+    -o-transition:all ease-in-out 1.5s;
+    transition:all ease-in-out 1.5s;	
+}
+
+.move,
+.move-add-active {
+    transform: translate3d(-10rem,0,0);
+    z-index: 10;
+}
+
+.move-remove-active {
+	transform: translate3d(-20rem,0,0);
+}
+
+#slide-banner #banner {
+	position: absolute;
+	right: 0.2rem;
+	bottom: 0.2rem;
 	z-index: 100;
 }
 
-.card-left {
-	transition: all 300ms ease;
-	transform: translate3d(-10rem,0,0);
-	z-index: 0;
+
+
+#banner > ul > li {
+	float: left;
+	width: 0.20rem;
+	height: 0.20rem;
+	border-radius:50%;
+	background-color: #CAC9EC;
+	margin: 0rem 0.08rem;
 }
 
-.card-right {
-	transition: all 300ms ease;
-	transform: translate3d(10rem,0,0);
-	z-index: 0;
+.active {
+	background-color: #FF5501 !important;
 }
-
-.card-none {
-	transition: all 0 ease;
-	transform: translate3d(20rem,0,0);
-	z-index: 0;
-}
-

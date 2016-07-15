@@ -1,32 +1,40 @@
 <div id="content" ng-controller="slideCtrl">
-	<div class="" id="slide-banner">
-		<ul move>
-			<li class="card card-active">
+	<div id="slide-banner" move>
+		<ul>
+			<li class="card" ng-class="state.li1?state.moveClass:''">
 				<a href="##">
 					<img src="/static/wechat/image/slide1.jpg" alt="">
 				</a>
 			</li>
-			<li class="card">
+			<li class="card" ng-class="state.li2?state.moveClass:''">
 				<a href="##">
 					<img src="/static/wechat/image/slide2.jpg" alt="">
 				</a>
 			</li>
-			<li class="card">
+			<li class="card" ng-class="state.li3?state.moveClass:''">
 				<a href="##">
 					<img src="/static/wechat/image/slide3.jpg" alt="">
 				</a>
 			</li>
-			<li class="card">
+			<li class="card" ng-class="state.li4?state.moveClass:''">
 				<a href="##">
 					<img src="/static/wechat/image/slide4.jpg" alt="">
 				</a>
 			</li>
-			<li class="card">
+			<li class="card" ng-class="state.li5?state.moveClass:''">
 				<a href="##">
 					<img src="/static/wechat/image/slide5.jpg" alt="">
 				</a>
 			</li>
 		</ul>
+		<div id="banner">
+			<ul>
+				<li ng-class="state.li1?'active':''"></li>
+				<li ng-class="state.li2?'active':''"></li>
+				<li ng-class="state.li3?'active':''"></li>
+				<li ng-class="state.li4?'active':''"></li>
+				<li ng-class="state.li5?'active':''"></li>
+			</ul>
+		</div>
 	</div>
 </div>
-<button>click</button>

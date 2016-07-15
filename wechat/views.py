@@ -7,9 +7,9 @@ from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
  
  
-WECHAT_TOKEN = ''
-AppID = ''
-AppSecret = ''
+WECHAT_TOKEN = 'yanran520'
+AppID = 'wx84f181acfb84f065'
+AppSecret = '881ad6f650cde214803a43bca5cf6527'
  
 # 实例化 WechatBasic
 wechat_instance = WechatBasic(
@@ -67,7 +67,7 @@ def wechat(request):
         else:
             reply_text = (
                 '自己玩泥巴去吧 ^ _ ^\n'
-                '【<a href="http://6a9762b0.ngrok.natapp.cn/demo1/">小心的博客</a>】')
+                '【<a href="http://181ca56e.ngrok.natapp.cn/demo1/">小心的博客</a>】')
  
         response = wechat_instance.response_text(content=reply_text)
  
