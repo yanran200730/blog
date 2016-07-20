@@ -2,14 +2,19 @@ from django.db import models
 import datetime
 
 # 创建表结构
-class User(models.Model):
-    username = models.CharField("User's name ", max_length=50)
-    passwd = models.CharField("User's password ", max_length=50)
-    email = models.EmailField("User's email address ", max_length=50)
-    date = models.DateTimeField(auto_now=True)
+class PersonManager(models.Manager):
+    def get_by_natural_key(self,username):
+        return self.get(username=username)
 
-    def __str__(self):
-        return self.username
+class User(models.Model):
+	objects = PersonManager()
+	username = models.CharField("User's name ", max_length=50)
+	passwd = models.CharField("User's password ", max_length=50)
+	email = models.EmailField("User's email address ", max_length=50)
+	date = models.DateTimeField(auto_now=True)
+
+	def __str__(self):
+		return self.username
 
 #每日一言
 class Say(models.Model):

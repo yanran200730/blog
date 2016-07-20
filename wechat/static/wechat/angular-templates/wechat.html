@@ -1,4 +1,4 @@
-<div id="content" ng-controller="slideCtrl">
+<div ng-controller="slideCtrl">
 	<div id="slide-banner" move>
 		<ul>
 			<li class="card" ng-class="state.li1?state.moveClass:''">
@@ -38,3 +38,36 @@
 		</div>
 	</div>
 </div>
+<section id="content">
+	<div class="day-content" ng-controller="changeSay">
+		<span class="change">一言</span>
+		<span class="say">{{ content }}</span>
+	</div>
+	<div class="section" ng-controller="revShuo">
+		<div class="subtitle">
+			<span>说说</span>
+		</div>
+		<div class="shuoshuo" ng-repeat="item in list_content">
+			<img src="/static/wechat/image/person_logo.jpg">
+			<span>{{ item }}</span>
+		</div>
+	</div>
+	<div class="section" ng-controller="revArticle">
+		<div class="subtitle">
+			<span>文字</span>
+		</div>
+		<article ng-repeat="content in list_content">
+			<div class="article-img" >
+				<img src="{{ content.img }}">
+			</div>
+			<div class="article-content">
+				<p>{{ content.article }}</p>
+			</div>
+		</article>
+	</div>
+	<div class="section">
+		<div class="subtitle">
+			<span>编程</span>
+		</div>
+	</div>
+</section>

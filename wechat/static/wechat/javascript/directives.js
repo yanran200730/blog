@@ -1,5 +1,6 @@
 var myDirectives = angular.module('myDirectives', ['myCtrls']);
 
+//轮播图指令
 myDirectives.directive('move',function($interval){
 	var timer= null;
 	return {
@@ -15,7 +16,7 @@ myDirectives.directive('move',function($interval){
 					$scope.state.index = 1;
 				};
 				$scope.state["li"+$scope.state.index] = true;	
-			},4000)
+			},10000)
 		}
 	}
 })

@@ -2,7 +2,7 @@
 
 html {
 	font-size: 57px;
-	overflow: hidden;
+	/*overflow: hidden; */
 }
 
 body,ul,li,p {
@@ -16,9 +16,55 @@ ul,ol {
 
 body {
 	background-color: #eff0f0; 
-	overflow: hidden;
+	/*margin-bottom: 1rem;*/
+	/*overflow: hidden;*/
 }
 
+/*媒体查询*/
+@media screen and (min-width: 320px) {
+    html {
+    	font-size: 32px;
+    }
+}
+ 
+@media screen and (min-width: 360px) {
+    html {
+    	font-size: 36px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    html {
+    	font-size: 37.5px;
+    }
+}
+ 
+@media screen and (min-width: 414px) {
+    html {
+    	font-size: 41.4px;
+    }
+}
+
+@media screen and (min-width: 435px) {
+    html {
+    	font-size: 43.5px;
+    }
+}
+ 
+@media screen and (min-width: 440px) {
+    html {
+    	font-size: 44px;
+    }
+}
+ 
+@media screen and (min-width: 480px) {
+    html {
+    	font-size: 48px;
+    }
+}
+
+
+/*阿里图标字体*/
 @font-face {
 	font-family: 'iconfont';
 	src: url('../iconfont/iconfont.eot');
@@ -30,13 +76,14 @@ body {
 
 .iconfont {
     font-family:"iconfont" !important;
-    font-size: 25px;
+    font-size: 0.6rem;
     font-style:normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/*导航栏*/
 #footer {
 	position: fixed;
 	bottom: 0rem;
@@ -45,7 +92,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-content: center;
-	font-size: 10px;
+	font-size: 0.32rem;
 	border-bottom: 1px solid #E7E7E7;
 	border-top: 1px solid #F8F8F8;
 	width: 100%;
@@ -62,13 +109,14 @@ body {
 	display: block;
 }
 
+/*首页轮播图*/
 #slide-banner {
-	transition: all ease-in-out 1s;
 	position: relative;
 	overflow: hidden;
 	width: 10rem;
 	height: 3.5rem;
 	margin: 0rem auto;
+	z-index: 10;
 }
 
 #slide-banner > ul {
@@ -76,14 +124,15 @@ body {
 	width: 50rem;
 	height: 100%;
 	left: 10rem;
+	z-index: 10;
 }
 
 .card {
 	position: absolute;
-	transform: translate3d(0rem,0,0);
 	width: 10rem;
 	height: 100%;
 	float: left;
+	z-index: 10;
 }
 
 .card img {
@@ -100,12 +149,17 @@ body {
 
 .move,
 .move-add-active {
+    -webkit-transform: translate3d(-10rem,0,0);
+    -moz-transform: translate3d(-10rem,0,0);
+    -o-transform: translate3d(-10rem,0,0);
     transform: translate3d(-10rem,0,0);
-    z-index: 10;
 }
 
 .move-remove-active {
-	transform: translate3d(-20rem,0,0);
+    -webkit-transform: translate3d(-20rem,0,0);
+    -moz-transform: translate3d(-20rem,0,0);
+    -o-transform: translate3d(-20rem,0,0);
+    transform: translate3d(-20rem,0,0);
 }
 
 #slide-banner #banner {
@@ -115,17 +169,97 @@ body {
 	z-index: 100;
 }
 
-
-
 #banner > ul > li {
 	float: left;
 	width: 0.20rem;
 	height: 0.20rem;
-	border-radius:50%;
+	border-radius: 50%;
 	background-color: #CAC9EC;
 	margin: 0rem 0.08rem;
 }
 
 .active {
 	background-color: #FF5501 !important;
+}
+
+
+/*homepage style*/
+
+#content {
+	width: 10rem;
+	margin: 0.2rem auto 1.5rem auto;
+}
+
+.day-content {
+	padding: 0rem 0.15rem;
+	font-size: 10px;
+}
+
+.day-content .change {
+	display: inline-block;
+	padding: 0.08rem;
+	border: 1px solid #4db2ec;
+	border-radius: 4px;
+	color: #4db2ec;
+}
+
+.section {
+	padding: 0.10rem 0.10rem;
+	font-size: 10px;
+}
+
+.section > .subtitle {
+	border-bottom: 1px solid #DAD8D8; 
+}
+
+.subtitle > span {
+	color: #737373;
+	font-size: 11px;
+	display: inline-block;
+	padding: 0.16rem;
+	border-bottom: 1px solid #4db2ec;
+} 
+
+.shuoshuo {
+	position: relative;
+	margin-top: 0.2rem;
+}
+
+.shuoshuo > img {
+	width: 30px;
+	height: 30px;
+}
+
+.shuoshuo span {
+	position: absolute;
+	display: block;
+	line-height: 30px;
+	left: 38px;
+	top: 0px;
+	width: 8.5rem;
+	word-spacing: 0.2rem;
+	letter-spacing: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.section > article {
+	position: relative;
+	margin: 0.2rem 0 0.4rem 0;
+}
+
+.article-img > img{
+	position: absolute;
+	left: 0rem;
+	top: 0rem;
+	width: 3rem;
+	height: 3rem;
+}
+
+.article-content {
+	margin-left: 3.3rem;
+	width: 6.4rem;
+	height: 3rem;
+	overflow: hidden;
 }

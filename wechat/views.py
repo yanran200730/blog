@@ -5,6 +5,10 @@ from django.views.decorators.csrf import csrf_exempt
 from wechat_sdk import WechatBasic
 from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
+from blog.models import Say,Feeling,Article
+import random
+import json
+from django.core import serializers
  
  
 WECHAT_TOKEN = 'yanran520'
@@ -67,17 +71,41 @@ def wechat(request):
         else:
             reply_text = (
                 '自己玩泥巴去吧 ^ _ ^\n'
-                '【<a href="http://181ca56e.ngrok.natapp.cn/demo1/">小心的博客</a>】')
+                '【<a href="http://465cc2a6.ngrok.natapp.cn/demo1/">小心的博客</a>】')
  
         response = wechat_instance.response_text(content=reply_text)
  
     return HttpResponse(response, content_type="application/xml")
 
 def index(request):
-	return render(request,"wechat/index.html")
+    return render(request,"wechat/index.html")
 
 def demo1(request):
-	return render(request,"wechat/demo1.html") 
+    return render(request,"wechat/demo1.html")
 
-def demo2(request):
-	return render(request,"wechat/demo2.html") 
+# 获取数据库中长度小于30的一言
+def say(request):
+    content = Say.objects.all()
+    list_content = list()
+    for item in content:
+        if len(item.saying) <= 30:
+            list_content.append(item)
+    index = random.randint(0,len(list_content))
+    sent_data = list_content[index].saying
+    return HttpResponse(sent_data)
+
+def shuo(request):
+    content = Feeling.objects.order_by("-id")
+    list_content = list()
+    sent_data = dict()
+    for item in range(4):
+        list_content.append(content[item].feeling)
+    sent_data["data_list"] = list_content
+    return HttpResponse(json.dumps(sent_data), content_type="application/json")
+
+def wechet_article(request):
+    length = len(Article.objects.all())
+    index = length-3
+    data = serializers.serialize('json', Article.objects.all()[index:])
+    return HttpResponse(data, content_type="application/json")
+
