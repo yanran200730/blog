@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from wechat_sdk import WechatBasic
 from wechat_sdk.exceptions import ParseError
 from wechat_sdk.messages import TextMessage
-from blog.models import Say,Feeling,Article
+from blog.models import Say,Feeling,Article,Coding
 import random
 import json
 from django.core import serializers
@@ -71,7 +71,7 @@ def wechat(request):
         else:
             reply_text = (
                 '自己玩泥巴去吧 ^ _ ^\n'
-                '【<a href="http://465cc2a6.ngrok.natapp.cn/demo1/">小心的博客</a>】')
+                '【<a href="http://f9a5ab.ngrok.natapp.cn/demo1/">小心的博客</a>】')
  
         response = wechat_instance.response_text(content=reply_text)
  
@@ -103,9 +103,24 @@ def shuo(request):
     sent_data["data_list"] = list_content
     return HttpResponse(json.dumps(sent_data), content_type="application/json")
 
-def wechet_article(request):
+def wechat_article(request):
     length = len(Article.objects.all())
     index = length-3
-    data = serializers.serialize('json', Article.objects.all()[index:])
+    data = serializers.serialize('json', Article.objects.all()[index:],use_natural_foreign_keys=True)
     return HttpResponse(data, content_type="application/json")
 
+# 实例 序列化
+# def wechet_article(request):
+#     articles = Article.objects.order_by("-id")
+#     list_content = []
+#     for i in range(3):
+#         list_content.append(articles[i].toJSON())
+#     dicts = {}
+#     dicts["list_content"] = list_content
+#     return HttpResponse(list_content, content_type="application/json")
+
+def code(request):
+    length = len(Coding.objects.all())
+    index = length-3
+    data = serializers.serialize('json', Coding.objects.all(),use_natural_foreign_keys=True)
+    return HttpResponse(data, content_type="application/json")

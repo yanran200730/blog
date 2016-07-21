@@ -24,7 +24,7 @@ myCtrls.controller('changeSay', ['$scope','$http','$interval', function($scope,$
     $scope.req();
     $interval(function(){
         $scope.req();
-    },15000);
+    },100000);
 }]);
 
 myCtrls.controller('revShuo', ['$scope','$http', function($scope,$http){
@@ -47,14 +47,33 @@ myCtrls.controller('revArticle', ['$scope','$http', function($scope,$http){
                 var img = str + response[i]["fields"]["img"];
                 myarr.title = response[i]["fields"]["title"];
                 myarr.article = response[i]["fields"]["article"];
-                myarr.createTime = response[i]["fields"]["createTime"];
+                myarr.time = response[i]["fields"]["createTime"];
                 myarr.img = img;
                 myarr.tag = response[i]["fields"]["tag"];
                 myarr.user = response[i]["fields"]["author"];
             }
              $scope.list_content.push(myarr)
         }
-        console.log($scope.list_content)
+    }).error(function(){
+        console.log("报错了!")
+    })
+}])
+
+myCtrls.controller('revCode', ['$scope','$http', function($scope,$http){
+    $http.get('/code/').success(function(response){
+        $scope.list_content = new Array();
+        var len = response[0]["fields"].length;
+        for (var i=0;i<response.length;i++){
+            var myarr = new Object();
+            for(var j=0;j<1;j++){
+                myarr.title = response[i]["fields"]["title"];
+                myarr.article = response[i]["fields"]["article"];
+                myarr.time = response[i]["fields"]["createTime"];
+                myarr.tag = response[i]["fields"]["tag"];
+                myarr.user = response[i]["fields"]["author"];
+            }
+             $scope.list_content.push(myarr)
+        }
     }).error(function(){
         console.log("报错了!")
     })

@@ -7,5 +7,7 @@ urlpatterns = [
     url(r'^demo1/$',views.demo1),
     url(r'^one/$',views.say),
     url(r'^shuo/$',views.shuo),
-    url(r'^wechet_article/$',views.wechet_article)	
+    url(r'^wechet_article/$',views.wechat_article),
+    url(r'^code/$',views.code)
+
 ]

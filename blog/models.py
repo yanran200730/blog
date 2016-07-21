@@ -1,10 +1,14 @@
 from django.db import models
 import datetime
+import json
 
 # 创建表结构
+
 class PersonManager(models.Manager):
-    def get_by_natural_key(self,username):
-        return self.get(username=username)
+	"""docstring for Person"""
+	def get_by_natural_key(self, username):
+		return self.get(username=username)
+		
 
 class User(models.Model):
 	objects = PersonManager()
@@ -13,8 +17,13 @@ class User(models.Model):
 	email = models.EmailField("User's email address ", max_length=50)
 	date = models.DateTimeField(auto_now=True)
 
+	def natural_key(self):
+		return (self.username)
+			
 	def __str__(self):
 		return self.username
+
+
 
 #每日一言
 class Say(models.Model):
@@ -48,6 +57,23 @@ class Article(models.Model):
 
 	def __str__(self):
 		return self.author.username
+
+	def toJSON(self):
+		fields = []
+		dicts = {}
+		for field in self._meta.fields:
+			fields.append(field.name)
+		url = getattr(getattr(self,'img'),"url")
+		img = url.replace("media","static")
+		username = getattr(getattr(self,'author'),'username')
+		time = getattr(self,'createTime').strftime('%Y-%m-%d %H:%M:%S')
+		for attr in fields:
+			if attr != 'img' and attr !='author' and attr !='createTime':
+				dicts[attr] = getattr(self,attr)
+		dicts['img'] = img	
+		dicts["username"] = username
+		dicts["time"] = time
+		return json.dumps(dicts)
 
 class Coding(models.Model):
 	author = models.ForeignKey(User)

@@ -61,13 +61,36 @@
 				<img src="{{ content.img }}">
 			</div>
 			<div class="article-content">
-				<p>{{ content.article }}</p>
+				<div class="content-head">
+					<h2>{{ content.title }}</h2>
+					<span>{{ content.user }} - {{ content.time | date : 'yyyy - MM - dd'}}</span>
+				</div>
+				<div class="content-body">
+					<p>{{ content.article | len:40 }}</p>
+				</div>
+				<div class="tag">
+					<span>{{ content.tag }}</span>
+				</div>
 			</div>
 		</article>
 	</div>
-	<div class="section">
+	<div class="section" ng-controller="revCode">
 		<div class="subtitle">
 			<span>编程</span>
 		</div>
+		<article ng-repeat="content in list_content">
+			<div class="code-content">
+				<div class="content-head">
+					<h2>{{ content.title }}</h2>
+					<span>{{ content.user }} - {{ content.time | date : 'yyyy - MM - dd'}}</span>
+				</div>
+				<div class="content-body code-body">
+					<p>{{ content.article | len:110 }}</p>
+				</div>
+				<div class="tag">
+					<span>{{ content.tag }}</span>
+				</div>
+			</div>
+		</article>
 	</div>
 </section>
