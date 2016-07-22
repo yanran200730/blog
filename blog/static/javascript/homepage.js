@@ -1,5 +1,4 @@
 
-//jQuery 封装函数
 (function($){
     $.receive = function(ele){
 		$.ajax({
