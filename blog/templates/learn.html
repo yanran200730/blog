@@ -1,59 +1,59 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block extracss %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/learn.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/learn.css' %}">
 {% endblock%}
 {% block extrajavascript %}
-    <script type="text/javascript" src="{% static 'javascript/learn.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascript/learn.js' %}"></script>
 {% endblock %}
 {% load pagination_tags %}
 {% block title %}小清新音乐{% endblock %}
 {% block content %}
-    <div class="article">
-        <div class="head_section">
-            <div class="link">
-                <a href="../">
-                    <span id="home_page">首页</span>
-                </a>
-                <span id="gt">&gt;</span>
-                <span>编程</span>
-             </div>
-            <div class="title_block">
-                <h1>编程</h1>
-                <p>小清新音乐、治愈系音乐、唯美音乐、有声读物、声音电台、温暖动听的声音</p>
-            </div>
+<div class="article">
+    <div class="head_section">
+        <div class="link">
+            <a href="../">
+                <span id="home_page">首页</span>
+            </a>
+            <span id="gt">&gt;</span>
+            <span>编程</span>
         </div>
-        <div class="content_section">
-            <div class="body_section">
-                {% autopaginate code_article 5 %}
-                    {% for item in code_article %}
-                        <div class="mian_section">
-                            <div class="head_content">
-                                <h3>
-                                    <a title="{{ item.title }}" href="{% url 'coding' id=item.id %}">{{ item.title }}</a>
-                                </h3>
-                                 <span>作者：{{ item.author }}&nbsp; -  &nbsp;{{ item.createTime|date:" Y / m / d " }}</span>
-                            </div>
-                            <div class="body_content">
-                                <p>{{ item.article|truncatechars:210|cut:"#" }}</p>
-                            </div>
-                            <div class="foot_content">
-                                <a class="tag" title="Django">{{ item.tag }}</a>
-                                <a class="count" title="浏览次数" >
-                                    <i class="fa fa-eye fa-1x"></i>
-                                    <span id="look" class="size">浏览</span>
-                                    <span class="view_count">{{ item.view_count }}</span>
-                                </a>
-                                <a class="count zan" title="点赞次数" data-id="{{ item.id }}">    
-                                    <i class="fa fa-thumbs-up fa-1x"></i>
-                                    <span class="size zan-count">赞</span>
-                                    <span class="praise_count">{{ item.praise_count }}</span>
-                                </a>    
-                            </div>
-                        </div>    
-                    {% endfor %}
-                {% paginate %}
-            </div>    
+        <div class="title_block">
+            <h1>编程</h1>
+            <p>小清新音乐、治愈系音乐、唯美音乐、有声读物、声音电台、温暖动听的声音</p>
         </div>
     </div>
+    <div class="content_section">
+        <div class="body_section">
+            {% autopaginate code_article 5 %}
+                    {% for item in code_article %}
+            <div class="mian_section">
+                <div class="head_content">
+                    <h3>
+                        <a title="{{ item.title }}" href="{% url 'coding' id=item.id %}">{{ item.title }}</a>
+                    </h3>
+                    <span>
+                        作者：{{ item.author }}&nbsp; -  &nbsp;{{ item.createTime|date:" Y / m / d " }}
+                    </span>
+                </div>
+                <div class="body_content">
+                    <p>{{ item.article|truncatechars:210|cut:"#" }}</p>
+                </div>
+                <div class="foot_content">
+                    <a class="tag" title="Django">{{ item.tag }}</a>
+                    <a class="count" title="浏览次数" > <i class="fa fa-eye fa-1x"></i>
+                        <span id="look" class="size">浏览</span>
+                        <span class="view_count">{{ item.view_count }}</span>
+                    </a>
+                    <a class="count zan" title="点赞次数" data-id="{{ item.id }}"> <i class="fa fa-thumbs-up fa-1x"></i>
+                        <span class="size zan-count">赞</span>
+                        <span class="praise_count">{{ item.praise_count }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+                {% paginate %}
+        </div>
+    </div>
+</div>
 {% endblock %}
