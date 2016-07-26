@@ -92,8 +92,8 @@ def say(request):
 
 #主页html
 def home(request):
-    feels = Feeling.objects.order_by("-id")#说说
-    articles = Article.objects.order_by("-id")#文字
+    feels = Feeling.objects.order_by("-createTime")#说说
+    articles = Article.objects.order_by("-createTime")#文字
     length = math.ceil(len(feels)/5)
     feel_list = list()
     article_list = list()
@@ -105,7 +105,7 @@ def home(request):
 
 #说说ajax post请求
 def talk(request):
-    feel = Feeling.objects.order_by("-id")
+    feel = Feeling.objects.order_by("-createTime")
     feel_length = len(Feeling.objects.all())
     page_len =  math.ceil(feel_length/5)
     current_page = int(request.POST["current_page"])
@@ -144,7 +144,7 @@ def like_count(request):
     return HttpResponse(send_data)
 
 def shuoshuo(request):
-    feels = Feeling.objects.order_by("-id")
+    feels = Feeling.objects.order_by("-createTime")
     feels_list = list()
     for i in range(len(feels)):
         feels_list.append(feels[i])
@@ -160,7 +160,7 @@ def mood(request,id):
     return render_to_response("Letter.html",{"feel":feel,"current_url":current_url,"domain":domain})
 
 def article(request):
-    articles = Article.objects.order_by("-id")
+    articles = Article.objects.order_by("-createTime")
     article_list = list()
     for i in range(len(articles)):
         article_list.append(articles[i])
@@ -181,7 +181,7 @@ def music(request):
     return render_to_response("music.html")
 
 def learn(request):
-    condings = Coding.objects.order_by("-id")
+    condings = Coding.objects.order_by("-createTime")
     code_article  = list()
     for i in range(len(condings)):
         code_article.append(condings[i])

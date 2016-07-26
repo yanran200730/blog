@@ -30,7 +30,7 @@
                         </div>
                         <div class="content_block">
                             <h3 class="title"><a href="{% url 'Letter' id=item.id %}">Letter.{{ item.id }}</a></h3>
-                            <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y/m/d" }}</span>
+                            <span class="date">{{ item.person.username }} &nbsp - &nbsp {{ item.createTime|date:"Y / m / d" }}</span>
                             <span class="shuoshuo_content">{{ item.feeling }}</span>
                         </div>
                     </div>
