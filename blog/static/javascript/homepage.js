@@ -1,6 +1,7 @@
 
-$(document).ready(function(){
-    receive = function(ele){
+//jQuery 封装函数
+(function($){
+    $.receive = function(ele){
 		$.ajax({
 			type:"POST",
 			url: "/say/",
@@ -15,8 +16,10 @@ $(document).ready(function(){
 			}
 		})
     }
+})(jQuery);
 
-    rev_count = function(count,content,index,elev){
+(function($){
+    $.rev_count = function(count,content,index,elev){
 		$.ajax({
 			type:"POST",
 			data:{"count":count,"content":content},
@@ -33,8 +36,11 @@ $(document).ready(function(){
 			}
 		})
     }
+})(jQuery);
 
-    rev = function(ele1,ele2,parameter){
+//说说tab 切换 ajax请求函数
+(function($){
+    $.rev = function(ele1,ele2,parameter){
     	var current_page = parseInt($("#next").attr("name"));
 			$.ajax({
 				data:{"data":parameter,"current_page":current_page},
@@ -77,24 +83,34 @@ $(document).ready(function(){
 				}
 			})
 		// }
-    };
+    }
+})(jQuery);
 
+//一言 ajax 请求
+$(document).ready(function(){
 	var butt = $("#change");
 	var cont = $("#saying");
 	cont_text = cont.html();
 
 	setInterval(function(){
-		receive(cont)
+		$.receive(cont)
 	},50000)
 
 	butt.click(function(){
-		receive(cont)
-	});	
+		$.receive(cont)
+	});
+});
 
+
+//说说
+$(document).ready(function(){
 	var previous = $("#previous");
 	var next = $("#next");
 	var talk_about  = $(".talk_about");
 	var counts = $(".count");
+
+	// var count_ele = $(".count");
+	// var talk_about  = $(".talk_about");
 	var favorite = $(".favorite")
 
 	favorite.click(function(){
@@ -105,7 +121,7 @@ $(document).ready(function(){
 
 		if ($(".favorite").eq(index).attr("style")){
 		}else{
-			rev_count(count,content,index,that);
+			$.rev_count(count,content,index,that);
 		}
 	})
 
@@ -118,7 +134,7 @@ $(document).ready(function(){
 			};
 			favorite.removeAttr("style");
 			previous.removeClass("opacity");
-			rev(talk_about,counts,"next");
+			$.rev(talk_about,counts,"next");
 		};
 	});
 
@@ -130,8 +146,19 @@ $(document).ready(function(){
 			};
 			favorite.removeAttr("style");
 			next.removeClass("opacity");
-			rev(talk_about,counts,"previous")
+			$.rev(talk_about,counts,"previous")
 		}
 	});
-})
+});
+
+// $(document).ready(function(){
+// 	$(".body").each(function(){
+// 		var max_width = 90;
+// 		if($(this).text().length>max_width){
+// 			$(this).text($(this).text().substring(0,max_width));
+// 			$(this).html($(this).html()+"......");
+// 		}
+// 	});
+// });
+
 
