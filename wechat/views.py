@@ -10,7 +10,10 @@ import random
 import json
 from django.core import serializers
 
- 
+WECHAT_TOKEN = 'yanran520'
+AppID = 'wx84f181acfb84f065'
+AppSecret = '881ad6f650cde214803a43bca5cf6527'
+
 # 实例化 WechatBasic
 wechat_instance = WechatBasic(
     token=WECHAT_TOKEN,

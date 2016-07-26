@@ -181,7 +181,7 @@ def music(request):
     return render_to_response("music.html")
 
 def learn(request):
-    condings = Coding.objects.order_by("-createTime")
+    condings = Coding.objects.order_by("-id")
     code_article  = list()
     for i in range(len(condings)):
         code_article.append(condings[i])

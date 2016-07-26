@@ -2,12 +2,9 @@
 {% load staticfiles %}
 {% block extracss %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/learn.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'highlight/styles/Solarized-Light.css' %}">
 {% endblock%}
 {% block extrajavascript %}
     <script type="text/javascript" src="{% static 'javascript/learn.js' %}"></script>
-<!--     <script type="text/javascript" src="{% static 'highlight/highlight.pack.js' %}"></script>
-    <script>hljs.initHighlightingOnLoad();</script> -->
 {% endblock %}
 {% load pagination_tags %}
 {% block title %}小清新音乐{% endblock %}
