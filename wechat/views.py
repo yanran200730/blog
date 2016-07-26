@@ -94,7 +94,7 @@ def say(request):
     return HttpResponse(sent_data)
 
 def shuo(request):
-    content = Feeling.objects.order_by("-id")
+    content = Feeling.objects.order_by("-createTime")
     list_content = list()
     sent_data = dict()
     for item in range(4):
@@ -103,7 +103,7 @@ def shuo(request):
     return HttpResponse(json.dumps(sent_data), content_type="application/json")
 
 def wechat_article(request):
-    length = len(Article.objects.all())
+    length = len(Article.objects.order_by("-createTime"))
     index = length-3
     data = serializers.serialize('json', Article.objects.all()[index:],use_natural_foreign_keys=True)
     return HttpResponse(data, content_type="application/json")
@@ -119,7 +119,7 @@ def wechat_article(request):
 #     return HttpResponse(list_content, content_type="application/json")
 
 def code(request):
-    length = len(Coding.objects.all())
+    length = len(Coding.objects.order_by("-createTime"))
     index = length-3
     data = serializers.serialize('json', Coding.objects.all(),use_natural_foreign_keys=True)
     return HttpResponse(data, content_type="application/json")
