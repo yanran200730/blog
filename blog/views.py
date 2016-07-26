@@ -199,7 +199,7 @@ def coding(request,id):
 
 def zan(request):
     if request.POST["content_type"] == "letter":
-        content_id = request.POST["count"]
+        content_id = int(request.POST["count"])
         letter_content = Feeling.objects.get(id=content_id)
         count = letter_content.like_times + 1
         letter_content.like_times = count
@@ -213,7 +213,7 @@ def zan(request):
         article_content.save()
         return HttpResponse("success")
     elif request.POST["content_type"] == "code":
-        content_id = int(request.POST["count"])
+        content_id = int(request.POST["content_id"])
         Coding_content = Coding.objects.get(id=content_id)
         count = Coding_content.praise_count + 1
         Coding_content.praise_count = count
