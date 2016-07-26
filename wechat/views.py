@@ -50,7 +50,7 @@ def wechat(request):
     response = wechat_instance.response_text(
         content = (
             '感谢您的关注！\n回复【功能】两个字查看支持的功能，还可以回复任意内容开始聊天'
-            '\n【<a href="http://104.128.80.53:8000/">小心的博客</a>】'
+            '\n【<a href="yanran520.cc/demo1">小心的博客</a>】'
             ))
     if isinstance(message, TextMessage):
         # 当前会话内容
@@ -61,7 +61,7 @@ def wechat(request):
                     '比如回复 "Django 后台教程"\n'
                     '2. 回复任意词语，查天气，陪聊天，讲故事，无所不能！\n'
                     '还有更多功能正在开发中哦 ^_^\n'
-                    '【<a href="http://104.128.80.53:8000/">小心的博客</a>】'
+                    '【<a href="yanran520.cc/demo1">小心的博客</a>】'
                 )
         elif content.endswith('教程'):
             reply_text = '您要找的教程如下：'
@@ -70,7 +70,7 @@ def wechat(request):
         else:
             reply_text = (
                 '自己玩泥巴去吧 ^ _ ^\n'
-                '【<a href="http://f9a5ab.ngrok.natapp.cn/demo1/">小心的博客</a>】')
+                '【<a href="yanran520.cc/demo1">小心的博客</a>】')
  
         response = wechat_instance.response_text(content=reply_text)
  
