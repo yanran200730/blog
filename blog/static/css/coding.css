@@ -49,7 +49,7 @@
 }
 .body_content p {
     margin:25px 0;
-    line-height: 1.6;
+    line-height: 1.9;
     color: #909090;
     font-size: 14px;
 }
@@ -146,7 +146,7 @@ pre code span {
 
 #ds-share #ds-reset .ds-share-icons-more {
 	left: 638px !important;
-	top: -250px !important;
+	top: -395px !important;
 }
 
 .ds-share-icons-footer {
