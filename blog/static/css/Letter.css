@@ -79,10 +79,17 @@
 	top: 0px;
 	height: 100%;
 	width: 100%;
-	opacity: 1;
+	opacity: 0;
+	z-index: -1;
+	cursor: pointer;
+    -webkit-transition:all ease-in-out .7s;
+    -moz-transition:all ease-in-out .7s;
+    -o-transition:all ease-in-out .7s;
+    transition:all ease-in-out .7s;
 }
 
 .shade > .backdrop {
+	z-index: 100;
 	height: 100%;
 	width: 100%;
 	background-color: rgba(0,0,0,.5);
@@ -90,17 +97,8 @@
 
 .shade > .preview {
 	position: absolute;
-	top: 0;
-	left: 0;
+	z-index: 100;
 }
-
-.shade > .preview > img {
-    -webkit-transition:all ease-in-out .9s;
-    -moz-transition:all ease-in-out .9s;
-    -o-transition:all ease-in-out .9s;
-    transition:all ease-in-out .9s;
-}
-
 
 /*分享样式*/
 

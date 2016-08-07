@@ -28,10 +28,16 @@
         		<span>作者：{{ article.author.username }}&nbsp; -  &nbsp;{{ article.createTime|date:" Y / m / d " }}</span>
         	</div>
         	<div class="content_img">
-        		<img src="{% static article.img %}">
+        		<img id="img" src="{% static article.img %}">
         	</div>
         	<p class="article">{{ article.article }}</p>
         </dir>
+        <div class="shade">
+            <div class="backdrop"></div>
+            <div class="preview">
+                <img src="{% static article.img %}">
+            </div>
+        </div>
         <div class="ds-zan" id="zan" name= "{{ article.id }}">
             <a class="zan new">
                 <i class="fa fa-thumbs-up fa-lg"></i>

@@ -22,5 +22,18 @@ $(document).ready(function(){
 				}
 			})
 		}	
-	})		
+	});
+
+	var img_width  = $(".preview > img").width()/2;
+	var img_height = $(".preview > img").height()/2;
+	var width = $(document).width()/2-img_width;
+	var height = $(window).height()/2-img_height;
+	$(".preview").css({"left":width,"top":height});
+
+	$("#img").on("click",function(){
+		$(".shade").css({"opacity":"1","z-index":100});
+		$(".shade").on("click",function(){
+			$(this).css({"opacity":"0","z-index":-1})
+		})
+	});		
 });
