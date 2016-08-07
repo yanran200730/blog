@@ -9,5 +9,4 @@ urlpatterns = [
     url(r'^shuo/$',views.shuo),
     url(r'^wechet_article/$',views.wechat_article),
     url(r'^code/$',views.code)
-
 ]

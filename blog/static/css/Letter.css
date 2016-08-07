@@ -68,7 +68,39 @@
 #img {
 	display: block;
 	margin: 0px auto;
+	cursor: pointer;
 }
+
+/*遮罩层*/
+
+.shade {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+}
+
+.shade > .backdrop {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.5);
+}
+
+.shade > .preview {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.shade > .preview > img {
+    -webkit-transition:all ease-in-out .9s;
+    -moz-transition:all ease-in-out .9s;
+    -o-transition:all ease-in-out .9s;
+    transition:all ease-in-out .9s;
+}
+
 
 /*分享样式*/
 

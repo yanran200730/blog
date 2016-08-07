@@ -105,6 +105,23 @@ nav ul li a:hover {
 	border: 1px solid #D1D1D1;
 }
 
+.qq_wechat {
+	height: 200px;
+	line-height: 200px;
+}
+
+.wechat_img {
+	width: 180px;
+	height: 180px;
+	margin: 0px auto;
+}
+
+.wechat_img > img {
+	height: 180px;
+	text-align: center;
+	vertical-align: middle;
+}
+
 .current_page {
 	color: #4db2ec;
 	border-bottom: 1px solid #4db2ec;
